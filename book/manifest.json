@@ -1,0 +1,139 @@
+{
+  "title": "Java từ Cơ bản đến Nâng cao",
+  "subtitle": "Sách lập trình Java cho người mới bắt đầu — dạy OOP từ số 0",
+  "parts": [
+    {
+      "id": "part0-setup",
+      "title": "Phần 0 — Chuẩn bị môi trường",
+      "dir": "part0-setup",
+      "chapters": [
+        { "num": 1, "slug": "gioi-thieu-java", "title": "Giới thiệu Java: JDK/JRE/JVM là gì" },
+        { "num": 2, "slug": "cai-dat-moi-truong", "title": "Cài đặt JDK và IDE" },
+        { "num": 3, "slug": "chuong-trinh-dau-tien", "title": "Chương trình Java đầu tiên" },
+        { "num": 4, "slug": "lam-quen-ide", "title": "Làm quen IDE và giới thiệu Maven/Gradle" }
+      ]
+    },
+    {
+      "id": "part1-fundamentals",
+      "title": "Phần 1 — Nền tảng lập trình",
+      "dir": "part1-fundamentals",
+      "chapters": [
+        { "num": 5, "slug": "bien-kieu-du-lieu", "title": "Biến, kiểu dữ liệu nguyên thủy, ép kiểu" },
+        { "num": 6, "slug": "toan-tu-bieu-thuc", "title": "Toán tử và biểu thức" },
+        { "num": 7, "slug": "cau-truc-dieu-khien", "title": "Cấu trúc điều khiển: if/else, switch" },
+        { "num": 8, "slug": "vong-lap", "title": "Vòng lặp: for, while, do-while" },
+        { "num": 9, "slug": "mang", "title": "Mảng một chiều và nhiều chiều" },
+        { "num": 10, "slug": "phuong-thuc", "title": "Phương thức (method) tĩnh" },
+        { "num": 11, "slug": "chuoi-string", "title": "Chuỗi (String) và StringBuilder" }
+      ]
+    },
+    {
+      "id": "part2-oop-basics",
+      "title": "Phần 2 — Nhập môn OOP",
+      "dir": "part2-oop-basics",
+      "chapters": [
+        { "num": 12, "slug": "vi-sao-can-oop", "title": "Vì sao cần OOP" },
+        { "num": 13, "slug": "class-va-object", "title": "Class & Object" },
+        { "num": 14, "slug": "encapsulation", "title": "Encapsulation (đóng gói)" },
+        { "num": 15, "slug": "package-va-import", "title": "Package & import" }
+      ]
+    },
+    {
+      "id": "part3-oop-advanced",
+      "title": "Phần 3 — OOP nâng cao",
+      "dir": "part3-oop-advanced",
+      "chapters": [
+        { "num": 16, "slug": "ke-thua", "title": "Kế thừa (Inheritance)" },
+        { "num": 17, "slug": "da-hinh", "title": "Đa hình (Polymorphism)" },
+        { "num": 18, "slug": "abstract-va-interface", "title": "Abstract class & Interface" },
+        { "num": 19, "slug": "nested-class-enum", "title": "Lớp lồng, anonymous class, enum nâng cao" },
+        { "num": 20, "slug": "object-class", "title": "Lớp Object: equals/hashCode/toString" }
+      ]
+    },
+    {
+      "id": "part4-exceptions-generics",
+      "title": "Phần 4 — Xử lý lỗi & Generics",
+      "dir": "part4-exceptions-generics",
+      "chapters": [
+        { "num": 21, "slug": "exception-handling", "title": "Exception handling" },
+        { "num": 22, "slug": "generics", "title": "Generics" }
+      ]
+    },
+    {
+      "id": "part5-collections",
+      "title": "Phần 5 — Collection Framework & Cấu trúc dữ liệu",
+      "dir": "part5-collections",
+      "chapters": [
+        { "num": 23, "slug": "tong-quan-collection", "title": "Tổng quan Collection Framework" },
+        { "num": 24, "slug": "arraylist-linkedlist", "title": "ArrayList & LinkedList" },
+        { "num": 25, "slug": "set", "title": "HashSet, TreeSet, LinkedHashSet" },
+        { "num": 26, "slug": "map", "title": "HashMap, TreeMap, LinkedHashMap" },
+        { "num": 27, "slug": "duyet-sap-xep", "title": "Duyệt & sắp xếp: Iterator, Comparator" },
+        { "num": 28, "slug": "thuat-toan-tim-kiem", "title": "Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search" },
+        { "num": 29, "slug": "thuat-toan-duyet-do-thi", "title": "Duyệt đồ thị/cây: BFS & DFS" }
+      ]
+    },
+    {
+      "id": "part6-functional",
+      "title": "Phần 6 — Lập trình hàm & Java hiện đại",
+      "dir": "part6-functional",
+      "chapters": [
+        { "num": 30, "slug": "lambda", "title": "Lambda expression & functional interface" },
+        { "num": 31, "slug": "stream-api", "title": "Stream API" },
+        { "num": 32, "slug": "optional", "title": "Optional và xử lý null an toàn" },
+        { "num": 33, "slug": "java-hien-dai", "title": "Java hiện đại: var, record, sealed, pattern matching" }
+      ]
+    },
+    {
+      "id": "part7-io",
+      "title": "Phần 7 — Nhập/Xuất & Xử lý dữ liệu",
+      "dir": "part7-io",
+      "chapters": [
+        { "num": 34, "slug": "file-io", "title": "File I/O: java.io và java.nio.file" },
+        { "num": 35, "slug": "json-csv", "title": "Xử lý JSON/CSV" },
+        { "num": 36, "slug": "serialization", "title": "Serialization cơ bản" }
+      ]
+    },
+    {
+      "id": "part8-concurrency",
+      "title": "Phần 8 — Đa luồng & bất đồng bộ",
+      "dir": "part8-concurrency",
+      "chapters": [
+        { "num": 37, "slug": "thread-co-ban", "title": "Thread cơ bản" },
+        { "num": 38, "slug": "dong-bo-hoa", "title": "Đồng bộ hoá: synchronized, Lock" },
+        { "num": 39, "slug": "executor-completablefuture", "title": "ExecutorService & CompletableFuture" },
+        { "num": 40, "slug": "virtual-thread", "title": "Giới thiệu Virtual Thread" }
+      ]
+    },
+    {
+      "id": "part9-tooling-testing",
+      "title": "Phần 9 — Công cụ, kiểm thử & quản lý dự án",
+      "dir": "part9-tooling-testing",
+      "chapters": [
+        { "num": 41, "slug": "junit", "title": "Unit test với JUnit 5" },
+        { "num": 42, "slug": "maven-gradle", "title": "Build tool: Maven và Gradle" },
+        { "num": 43, "slug": "debug-logging", "title": "Debug & logging" }
+      ]
+    },
+    {
+      "id": "part10-architecture",
+      "title": "Phần 10 — Kiến trúc & thực hành nâng cao",
+      "dir": "part10-architecture",
+      "chapters": [
+        { "num": 44, "slug": "design-pattern", "title": "Design pattern cơ bản" },
+        { "num": 45, "slug": "solid", "title": "Nguyên lý SOLID" },
+        { "num": 46, "slug": "jdbc", "title": "Kết nối cơ sở dữ liệu: JDBC cơ bản" },
+        { "num": 47, "slug": "du-an-tong-hop", "title": "Dự án tổng hợp" }
+      ]
+    },
+    {
+      "id": "part11-appendix",
+      "title": "Phụ lục",
+      "dir": "part11-appendix",
+      "chapters": [
+        { "num": 48, "slug": "phu-luc-a-loi-thuong-gap", "title": "Phụ lục A — Lỗi thường gặp & cách xử lý" },
+        { "num": 49, "slug": "phu-luc-b-tai-lieu-tham-khao", "title": "Phụ lục B — Tài liệu tham khảo" }
+      ]
+    }
+  ]
+}
