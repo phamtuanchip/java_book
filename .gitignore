@@ -33,3 +33,6 @@ code/ch34-file-io/*.txt
 # File sinh ra khi chay code mau Chuong 36 (Serialization)
 code/ch36-serialization/*.ser
 
+# File du lieu sinh ra khi chay du an tong hop Chuong 47
+code/ch47-du-an-tong-hop/*.csv
+
