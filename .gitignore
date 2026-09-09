@@ -27,3 +27,6 @@ replay_pid*
 node_modules/
 dist/
 
+# File sinh ra khi chay code mau Chuong 34 (File I/O)
+code/ch34-file-io/*.txt
+
