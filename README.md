@@ -5,10 +5,10 @@ Sách lập trình Java bằng tiếng Việt, dành cho người **chưa biết
 cho đến các chủ đề nâng cao (generics, collection, stream, đa luồng, JDBC, design pattern...),
 kèm code mẫu chạy được cho từng chương.
 
-> **Trạng thái: đã viết xong toàn bộ 47 chương + 2 phụ lục (Tập 1), đã có bản HTML.**
-> Xem `dist/index.html` để đọc bản HTML (chạy `npm run build` để tự sinh lại từ nguồn Markdown,
-> `dist/` không commit vào repo). Bản PDF sinh bằng `npm run build:pdf` (xem mục 6). Còn lại:
-> EPUB (mục 6, milestone 11).
+> **Trạng thái: đã viết xong toàn bộ 47 chương + 2 phụ lục (Tập 1), đã có bản HTML và PDF.**
+> Xem `dist/index.html` để đọc bản HTML, hoặc `dist/java-tu-co-ban-den-nang-cao-tap1.pdf` cho bản
+> in. Cả hai đã commit sẵn trong repo — chạy `npm run build:all` để tự build lại từ nguồn Markdown
+> khi nội dung thay đổi. Còn lại: EPUB (mục 6, milestone 11).
 >
 > **Đây là Tập 1** — nền tảng Java thuần (Java SE): cú pháp cơ bản, OOP, collection, generics,
 > exception, lập trình hàm/Java hiện đại, I/O, đa luồng, testing/tooling, kiến trúc & JDBC. **Tập 2
@@ -60,7 +60,7 @@ java_book/
 │   ├── legacy-unused/           # Code cũ trước khi có kế hoạch sách, chưa gắn chương nào (xem README trong đó)
 │   └── ch03-hello-world/, ch13-class-object/, ... ch47-du-an-tong-hop/
 ├── tools/                       # Script build HTML (tools/build.js) + CSS (tools/style.css)
-├── dist/                        # HTML đã build (không commit — chạy `npm run build` để sinh ra)
+├── dist/                        # HTML + PDF đã build, có commit sẵn — chạy `npm run build:all` để tự build lại
 └── README.md                    # File kế hoạch này
 ```
 
