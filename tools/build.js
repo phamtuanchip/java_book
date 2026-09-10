@@ -9,6 +9,7 @@ const hljs = require('highlight.js');
 
 const ROOT = path.join(__dirname, '..');
 const BOOK_DIR = path.join(ROOT, 'book');
+const CODE_DIR = path.join(ROOT, 'code');
 const DIST_DIR = path.join(ROOT, 'dist');
 
 const manifest = JSON.parse(fs.readFileSync(path.join(BOOK_DIR, 'manifest.json'), 'utf8'));
@@ -55,6 +56,18 @@ if (written.length === 0) {
 
 fs.mkdirSync(DIST_DIR, { recursive: true });
 fs.copyFileSync(path.join(__dirname, 'style.css'), path.join(DIST_DIR, 'style.css'));
+
+// Sao chep toan bo code/ vao dist/code/ - cac chuong link toi code mau bang duong
+// dan tuong doi "../../code/..." (dung khi doc file .md tren GitHub, tu book/<part>/
+// len 2 cap toi goc repo). Trong dist/ (cau truc PHANG, moi file HTML nam ngang
+// hang nhau), duong dan do duoc VIET LAI thanh "code/..." ngay ben duoi (xem ham
+// fixCodeLinks) - nen can co dist/code/ ton tai thi link moi khong bi gay.
+fs.rmSync(path.join(DIST_DIR, 'code'), { recursive: true, force: true });
+fs.cpSync(CODE_DIR, path.join(DIST_DIR, 'code'), { recursive: true });
+
+function fixCodeLinks(html) {
+  return html.replace(/(href=")\.\.\/\.\.\/code\//g, '$1code/');
+}
 
 function chapterHref(entry) {
   return `ch${String(entry.chapter.num).padStart(2, '0')}-${entry.chapter.slug}.html`;
@@ -112,7 +125,7 @@ ${bodyHtml}
 for (let i = 0; i < written.length; i++) {
   const entry = written[i];
   const src = fs.readFileSync(entry.file, 'utf8');
-  const bodyHtml = md.render(src);
+  const bodyHtml = fixCodeLinks(md.render(src));
   const titleMatch = src.match(/^#\s+(.+)$/m);
   const title = titleMatch ? titleMatch[1] : entry.chapter.title;
   const prev = i > 0 ? written[i - 1] : null;

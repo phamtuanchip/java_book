@@ -1,15 +1,19 @@
-# Java Book — Kế hoạch biên soạn sách
+# Java Book — Tập 1: Cơ bản đến Nâng cao
 
 Sách lập trình Java bằng tiếng Việt, dành cho người **chưa biết gì về lập trình lẫn OOP**,
 đi từ cài đặt JDK/JVM, cú pháp cơ bản, dạy hướng đối tượng (OOP) từ số 0 một cách chi tiết,
 cho đến các chủ đề nâng cao (generics, collection, stream, đa luồng, JDBC, design pattern...),
 kèm code mẫu chạy được cho từng chương.
 
-> **Trạng thái: đang lên kế hoạch, chưa viết nội dung sách.** Repo hiện có 10 file `.java` mẫu cũ,
-> đã được gom vào `code/algorithms/` (thuật toán tìm kiếm, duyệt đồ thị, cấu trúc dữ liệu và vài
-> ví dụ ứng dụng nhỏ) — đây là code tham khảo có sẵn, sẽ được rà soát và ánh xạ vào đúng
-> chương/phần tương ứng khi viết nội dung (xem mục 7), không phải nội dung sách đã hoàn thiện.
-> Định dạng phát hành: **HTML trước**, **PDF và EPUB sau**.
+> **Trạng thái: đã viết xong toàn bộ 47 chương + 2 phụ lục (Tập 1), đã có bản HTML.**
+> Xem `dist/index.html` để đọc bản HTML (chạy `npm run build` để tự sinh lại từ nguồn Markdown,
+> `dist/` không commit vào repo). Bản PDF sinh bằng `npm run build:pdf` (xem mục 6). Còn lại:
+> EPUB (mục 6, milestone 11).
+>
+> **Đây là Tập 1** — nền tảng Java thuần (Java SE): cú pháp cơ bản, OOP, collection, generics,
+> exception, lập trình hàm/Java hiện đại, I/O, đa luồng, testing/tooling, kiến trúc & JDBC. **Tập 2
+> (kế hoạch sau, chưa bắt đầu)** sẽ viết về **Java J2EE/Jakarta EE** — lập trình web/enterprise
+> (Servlet/JSP, Spring/Spring Boot, REST API, ORM...), xây dựng trực tiếp trên nền kiến thức Tập 1.
 
 ## 1. Mục tiêu
 
@@ -20,6 +24,11 @@ kèm code mẫu chạy được cho từng chương.
   rời rạc).
 - Xuất bản dạng "release" — chất lượng đủ để công bố công khai kèm code kèm theo.
 - Định dạng phát hành: **HTML** trước, **PDF** và **EPUB** ở giai đoạn sau.
+- **Chia thành 2 tập**: **Tập 1** (repo này) chỉ gồm Java SE thuần — đủ để viết được ứng dụng
+  console hoàn chỉnh, hiểu vững OOP/collection/generics/đa luồng/kiến trúc cơ bản, KHÔNG động tới
+  web/enterprise. **Tập 2** (kế hoạch sau, chưa bắt đầu viết) sẽ dạy **Java J2EE/Jakarta EE**
+  (Servlet/JSP, Spring/Spring Boot, REST API, kết nối ORM...), xây dựng trực tiếp trên nền Tập 1 —
+  người đọc Tập 2 được giả định đã nắm vững toàn bộ nội dung Tập 1.
 
 ## 2. Đối tượng độc giả
 
@@ -30,7 +39,7 @@ kèm code mẫu chạy được cho từng chương.
   áp dụng đúng tư duy hướng đối tượng, dùng được các thư viện chuẩn (collection, stream, I/O,
   concurrency) và các pattern/nguyên lý thiết kế cơ bản.
 
-## 3. Cấu trúc thư mục dự kiến
+## 3. Cấu trúc thư mục
 
 ```
 java_book/
@@ -48,8 +57,8 @@ java_book/
 │   ├── part10-architecture/     # Chương 44-47
 │   └── part11-appendix/         # Phụ lục A-B
 ├── code/                        # Code mẫu — mỗi chương có project/file Java riêng, chạy độc lập
-│   ├── algorithms/              # Code mẫu thuật toán cũ, gốc cho Chương 28-29 (xem mục 7)
-│   └── ch03-hello-world/, ch13-class-object/, ... ch47-capstone-project/
+│   ├── legacy-unused/           # Code cũ trước khi có kế hoạch sách, chưa gắn chương nào (xem README trong đó)
+│   └── ch03-hello-world/, ch13-class-object/, ... ch47-du-an-tong-hop/
 ├── tools/                       # Script build HTML (tools/build.js) + CSS (tools/style.css)
 ├── dist/                        # HTML đã build (không commit — chạy `npm run build` để sinh ra)
 └── README.md                    # File kế hoạch này
@@ -76,7 +85,7 @@ Mỗi chương cần có:
    compile-time/runtime điển hình của người mới học OOP (NullPointerException, ClassCastException,
    nhầm lẫn overload/override...).
 
-## 5. Mục lục sách (dự kiến)
+## 5. Mục lục sách (đã viết xong toàn bộ — Tập 1)
 
 ### Phần 0 — Chuẩn bị môi trường
 1. Giới thiệu Java: JDK/JRE/JVM là gì, "write once run anywhere", hệ sinh thái, các phiên bản LTS
@@ -158,34 +167,43 @@ Dự kiến áp dụng lại đúng hướng đã dùng cho `android_book` (đã
 Node.js tự viết thay vì mdBook/Honkit/Pandoc, để chủ động tuỳ biến hiển thị sơ đồ (Mermaid có
 pan/zoom) và giữ nhất quán CSS giữa các bản phát hành.
 
-- **HTML (ưu tiên làm trước)**: `tools/build.js` (dùng `markdown-it`) đọc `book/manifest.json` +
-  từng file `book/<part>/chXX-*.md`, sinh HTML đầy đủ vào `dist/` (sidebar điều hướng, prev/next,
-  syntax highlight bằng highlight.js, sơ đồ Mermaid có zoom/pan cho sơ đồ class/kế thừa).
-- **PDF (sau khi HTML ổn định)**: gộp toàn bộ chương thành một trang HTML dài (bìa, mục lục liên
-  kết, mỗi chương một trang in riêng), dùng Puppeteer (Chromium headless) render rồi in thành PDF —
-  không qua Pandoc/LaTeX, tái sử dụng đúng CSS/font đã dùng cho bản HTML.
-- **EPUB (giai đoạn sau cùng)**: dùng lại đúng nguồn Markdown, không viết lại nội dung.
+- **HTML — đã xong**: `tools/build.js` (dùng `markdown-it`) đọc `book/manifest.json` + từng file
+  `book/<part>/chXX-*.md`, sinh HTML đầy đủ vào `dist/` (sidebar điều hướng, prev/next, syntax
+  highlight bằng highlight.js, sơ đồ Mermaid có zoom/pan cho sơ đồ class/kế thừa). Build cũng sao
+  chép toàn bộ `code/` vào `dist/code/` và viết lại link tương đối cho khớp cấu trúc phẳng của
+  `dist/`, để link "code mẫu đầy đủ" trong từng chương mở đúng thư mục code tương ứng ngay trong
+  bản HTML (không chỉ đúng khi đọc `.md` trên GitHub).
+- **PDF — đã xong**: `tools/build-pdf.js` gộp toàn bộ 49 chương thành một trang HTML dài (bìa, mục
+  lục liên kết, mỗi chương một trang in riêng, link `code/...` được viết lại trỏ thẳng sang GitHub
+  vì PDF không mang theo thư mục `code/`), dùng Puppeteer (Chromium headless, đã có sẵn trong
+  `devDependencies`) render Mermaid/highlight.js rồi in thành `dist/java-tu-co-ban-den-nang-cao-tap1.pdf`
+  — không qua Pandoc/LaTeX, tái sử dụng đúng CSS/font đã dùng cho bản HTML. `npm run build:all`
+  chạy cả hai bước liên tiếp.
+- **EPUB (còn lại)**: dùng lại đúng nguồn Markdown, không viết lại nội dung.
 
 ## 7. Lộ trình biên soạn (milestones)
 
-1. ✅ Rà soát code mẫu cũ trong `code/algorithms/` và ánh xạ vào từng chương: `BinarySearch`/
-   `LinearSearch`/`JumpSearch`/`InterpolationSearch` → Chương 28 (thuật toán tìm kiếm);
-   `BreadthFirstSearch`/`DepthFirstSearch` → Chương 29 (duyệt đồ thị/cây); `HashTable` tham khảo
-   cho Chương 26 (HashMap); `Calculator` tham khảo cho ví dụ OOP nhập môn (Phần 2);
-   `InventoryManagementSystem`/`TextEditor` tham khảo cho dự án tổng hợp Chương 47. Đã dựng khung
-   thư mục `book/` (11 phần + phụ lục, `manifest.json` đầy đủ 49 chương), `tools/`, `package.json`
-   — chọn hướng script Node.js tự viết (`markdown-it` + `highlight.js`), xem mục 6.
-2. ⬜ Viết & code mẫu xong Phần 0 (môi trường) — cột mốc "chạy được Hello World bằng dòng lệnh".
-3. ⬜ Viết & code mẫu xong Phần 1 (nền tảng, chưa OOP).
-4. ⬜ Viết & code mẫu xong Phần 2–3 (nhập môn OOP + OOP nâng cao) — phần lõi quan trọng nhất, cần
-   review kỹ về mặt sư phạm (đúng thứ tự khái niệm, ví dụ dễ hiểu cho người chưa biết OOP).
-5. ⬜ Viết & code mẫu xong Phần 4–5 (exception, generics, collection).
-6. ⬜ Viết & code mẫu xong Phần 6–7 (lập trình hàm/stream, I/O).
-7. ⬜ Viết & code mẫu xong Phần 8–9 (đa luồng, công cụ/kiểm thử).
-8. ⬜ Viết & code mẫu xong Phần 10 + Phụ lục A-B, hoàn thiện dự án tổng hợp Chương 47.
-9. ⬜ Build bản HTML hoàn chỉnh, rà soát toàn bộ code mẫu qua một đợt review độc lập.
-10. ⬜ Build bản PDF (Puppeteer in từ HTML).
+1. ✅ Rà soát code mẫu cũ, dựng khung thư mục `book/` (11 phần + phụ lục, `manifest.json` đầy đủ
+   49 chương), `tools/`, `package.json` — chọn hướng script Node.js tự viết (`markdown-it` +
+   `highlight.js`), xem mục 6.
+2. ✅ Viết & code mẫu xong Phần 0 (môi trường) — cột mốc "chạy được Hello World bằng dòng lệnh".
+3. ✅ Viết & code mẫu xong Phần 1 (nền tảng, chưa OOP).
+4. ✅ Viết & code mẫu xong Phần 2–3 (nhập môn OOP + OOP nâng cao).
+5. ✅ Viết & code mẫu xong Phần 4–5 (exception, generics, collection — bao gồm thuật toán tìm
+   kiếm Chương 28 và BFS/DFS Chương 29, chuyển từ `code/algorithms/` cũ vào đúng chương).
+6. ✅ Viết & code mẫu xong Phần 6–7 (lập trình hàm/stream/Java hiện đại, I/O/JSON-CSV/serialization).
+7. ✅ Viết & code mẫu xong Phần 8–9 (đa luồng/virtual thread, JUnit/Maven-Gradle/debug-logging).
+8. ✅ Viết & code mẫu xong Phần 10 (design pattern, SOLID, JDBC) + Phụ lục A-B, hoàn thiện dự án
+   tổng hợp Chương 47 (Quản lý kho hàng console). Dọn `code/algorithms/` cũ: 3 file không gắn được
+   với chương nào (Swing GUI, ngoài phạm vi Tập 1) chuyển sang `code/legacy-unused/` kèm ghi chú,
+   không xoá.
+9. ✅ Build bản HTML hoàn chỉnh (`npm run build`), rà soát: sửa lỗi link tương đối `../../code/...`
+   bị gãy khi build ra `dist/` phẳng (nay `build.js` tự sao chép `code/` vào `dist/code/` và viết
+   lại link cho khớp cấu trúc phẳng).
+10. ✅ Build bản PDF (`npm run build:pdf`, `tools/build-pdf.js`, Puppeteer in từ HTML gộp).
 11. ⬜ Xuất bản EPUB.
+12. ⬜ **Tập 2 (Java J2EE/Jakarta EE)** — lên kế hoạch riêng (README/milestone mới) sau khi Tập 1
+    đã publish ổn định; chưa bắt đầu.
 
 ## 8. Các quyết định đã chốt trong quá trình lên kế hoạch
 
