@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 22 — Generics — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link active" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 22 — Generics</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Hiểu vấn đề generics giải quyết: dùng chung một class/phương thức cho nhiều kiểu dữ liệu mà vẫn
+an toàn về kiểu (type-safe).</li>
+<li>Viết được generic class và generic method.</li>
+<li>Dùng bounded type (<code>&lt;T extends ...&gt;</code>) khi cần giới hạn <code>T</code> phải là một loại cụ thể.</li>
+<li>Đọc hiểu wildcard (<code>? extends</code>, <code>? super</code>) khi gặp trong code/thư viện chuẩn — nền tảng quan
+trọng trước khi học Collection Framework ở Phần 5.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch22-generics/"><code>code/ch22-generics/</code></a>.</p>
+<blockquote>
+<p>Bạn đã dùng generics từ Chương 20 (<code>Comparable&lt;SanPham&gt;</code>) mà chưa hiểu cơ chế — chương này giải
+thích đầy đủ cú pháp <code>&lt; &gt;</code> đó nghĩa là gì.</p>
+</blockquote>
+<h2>Vấn đề generics giải quyết</h2>
+<p>Giả sử bạn cần một &quot;cái hộp&quot; chứa được một giá trị bất kỳ, không biết trước kiểu gì. Không có
+generics, một cách làm (tồi) là dùng <code>Object</code>:</p>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HopChuaCu</span> {
+    <span class="hljs-keyword">private</span> Object noiDung;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">Object</span> <span class="hljs-title function_">layNoiDung</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> noiDung;
+    }
+}
+</code></pre>
+<p>Vấn đề: <code>layNoiDung()</code> trả về <code>Object</code>, buộc người dùng phải <strong>tự ép kiểu</strong> mỗi lần lấy ra:</p>
+<pre class="hljs"><code><span class="hljs-type">HopChuaCu</span> <span class="hljs-variable">hop</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HopChuaCu</span>();
+hop.datNoiDung(<span class="hljs-string">&quot;Nguyen Van A&quot;</span>);
+<span class="hljs-type">String</span> <span class="hljs-variable">ten</span> <span class="hljs-operator">=</span> (String) hop.layNoiDung(); <span class="hljs-comment">// phai TU EP KIEU, de sai</span>
+</code></pre>
+<p>Nếu ai đó vô tình đặt sai kiểu vào hộp (<code>hop.datNoiDung(123);</code>), trình biên dịch <strong>không phát hiện
+được gì cả</strong> — lỗi chỉ lộ ra lúc <strong>chạy</strong>, dưới dạng <code>ClassCastException</code> (Chương 17), tại đúng chỗ
+ép kiểu, có thể cách rất xa chỗ đã đặt sai giá trị vào — rất khó truy vết.</p>
+<h2>Generic class — <code>&lt;T&gt;</code></h2>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HopChua</span>&lt;T&gt; {
+    <span class="hljs-keyword">private</span> T noiDung;
+
+    <span class="hljs-type">public</span> <span class="hljs-title function_">HopChua</span><span class="hljs-params">(T noiDung)</span> {
+        <span class="hljs-built_in">this</span>.noiDung = noiDung;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">T</span> <span class="hljs-title function_">layNoiDung</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> noiDung;
+    }
+}
+</code></pre>
+<p><code>&lt;T&gt;</code> ngay sau tên class khai báo <strong>tham số kiểu</strong> (type parameter) — <code>T</code> chỉ là một cái tên quy
+ước (viết tắt của &quot;Type&quot;; các tên quy ước khác hay gặp: <code>E</code> cho Element, <code>K</code>/<code>V</code> cho Key/Value —
+sẽ gặp lại ở Chương 26 khi học <code>Map</code>), sẽ được <strong>thay thế bằng một kiểu cụ thể</strong> khi bạn dùng class
+này:</p>
+<pre class="hljs"><code><span class="hljs-type">HopChua</span>&lt;String&gt; <span class="hljs-variable">hopTen</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HopChua</span>&lt;&gt;(<span class="hljs-string">&quot;Nguyen Van A&quot;</span>);
+<span class="hljs-type">HopChua</span>&lt;Integer&gt; <span class="hljs-variable">hopTuoi</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HopChua</span>&lt;&gt;(<span class="hljs-number">25</span>);
+
+<span class="hljs-type">String</span> <span class="hljs-variable">ten</span> <span class="hljs-operator">=</span> hopTen.layNoiDung(); <span class="hljs-comment">// KHONG can ep kieu - trinh bien dich TU BIET la String</span>
+</code></pre>
+<p>Cú pháp <code>new HopChua&lt;&gt;(...)</code> — cặp <code>&lt;&gt;</code> rỗng (gọi là &quot;diamond operator&quot;, có từ Java 7) — cho phép
+trình biên dịch <strong>tự suy luận</strong> kiểu generic từ ngữ cảnh (ở đây: từ kiểu khai báo biến <code>HopChua&lt;String&gt;</code>),
+không cần viết lặp lại <code>new HopChua&lt;String&gt;(...)</code>.</p>
+<p><strong>Lợi ích cốt lõi</strong>: nếu bạn cố gán sai kiểu (<code>hopTuoi.datNoiDung(&quot;chuoi&quot;);</code> — trong khi <code>hopTuoi</code>
+là <code>HopChua&lt;Integer&gt;</code>), trình biên dịch <strong>báo lỗi ngay lúc biên dịch</strong>, không đợi tới lúc chạy mới
+phát hiện. Đây chính là giá trị lớn nhất của generics: chuyển lỗi từ &quot;phát hiện lúc chạy&quot; (tệ) sang
+&quot;phát hiện lúc biên dịch&quot; (tốt hơn nhiều — bạn thấy lỗi ngay khi viết code, không phải đợi người
+dùng gặp phải khi chương trình đã chạy).</p>
+<h2>Generic method</h2>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-type">void</span> <span class="hljs-title function_">inMoiPhanTu</span><span class="hljs-params">(T[] mang)</span> {
+    <span class="hljs-keyword">for</span> (T phanTu : mang) {
+        System.out.println(<span class="hljs-string">&quot;- &quot;</span> + phanTu);
+    }
+}
+</code></pre>
+<p>Khai báo <code>&lt;T&gt;</code> <strong>ngay trước kiểu trả về</strong> — khác với generic class, tham số kiểu này chỉ có hiệu
+lực <strong>trong phạm vi phương thức</strong>, không cần class chứa nó phải là generic class. Gọi được với bất
+kỳ mảng kiểu nào:</p>
+<pre class="hljs"><code>Utils.inMoiPhanTu(<span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>[]{<span class="hljs-string">&quot;An&quot;</span>, <span class="hljs-string">&quot;Binh&quot;</span>});
+Utils.inMoiPhanTu(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Integer</span>[]{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>});
+</code></pre>
+<h2>Bounded type — giới hạn <code>T</code> phải là một loại cụ thể</h2>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HopSo</span>&lt;T <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Number</span>&gt; {
+    <span class="hljs-keyword">private</span> T giaTri;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">layGiaTriThuc</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> giaTri.doubleValue(); <span class="hljs-comment">// hop le vi MOI Number deu co doubleValue()</span>
+    }
+}
+</code></pre>
+<p><code>&lt;T extends Number&gt;</code> giới hạn: <code>T</code> <strong>chỉ được phép</strong> là <code>Number</code> hoặc lớp con của <code>Number</code>
+(<code>Integer</code>, <code>Double</code>, <code>Long</code>...) — cố dùng <code>HopSo&lt;String&gt;</code> sẽ là lỗi biên dịch, vì <code>String</code> không
+kế thừa <code>Number</code>. Đổi lại, <strong>bên trong</strong> class, bạn được phép gọi các phương thức của <code>Number</code>
+(như <code>doubleValue()</code>) trên biến kiểu <code>T</code>, dù không biết trước <code>T</code> cụ thể sẽ là <code>Integer</code> hay
+<code>Double</code> — trình biên dịch biết chắc <code>T</code> <strong>ít nhất</strong> cũng là một <code>Number</code>, nên các phương thức của
+<code>Number</code> chắc chắn tồn tại.</p>
+<p>(Lưu ý từ khoá dùng luôn là <code>extends</code>, kể cả khi giới hạn theo interface — không có từ khoá
+<code>implements</code> riêng trong ngữ cảnh bounded type.)</p>
+<h2>Wildcard — <code>? extends</code></h2>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">inGiaTriSo</span><span class="hljs-params">(HopChua&lt;? extends Number&gt; hop)</span> {
+    <span class="hljs-type">Number</span> <span class="hljs-variable">giaTri</span> <span class="hljs-operator">=</span> hop.layNoiDung();
+    System.out.println(<span class="hljs-string">&quot;Gia tri so: &quot;</span> + giaTri);
+}
+</code></pre>
+<p>Khác với bounded type (<code>&lt;T extends Number&gt;</code> — dùng khi khai báo <strong>cả class</strong>), wildcard <code>?</code> dùng
+khi bạn chỉ cần khai báo kiểu cho <strong>một tham số phương thức cụ thể</strong>, chấp nhận &quot;hộp chứa của <strong>bất
+kỳ</strong> kiểu con nào của <code>Number</code>&quot; — gọi được với cả <code>HopChua&lt;Integer&gt;</code> lẫn <code>HopChua&lt;Double&gt;</code>, mà
+<strong>không cần</strong> viết riêng hai phiên bản overload cho từng kiểu.</p>
+<p><code>? extends Number</code> chỉ cho phép <strong>đọc</strong> (lấy giá trị ra, xem như <code>Number</code>), <strong>không cho phép ghi</strong>
+(gọi <code>hop.datNoiDung(...)</code> qua tham chiếu kiểu <code>HopChua&lt;? extends Number&gt;</code> là lỗi biên dịch) — lý do
+kỹ thuật: trình biên dịch không biết chính xác <code>T</code> là <code>Integer</code> hay <code>Double</code> hay kiểu con nào khác
+của <code>Number</code>, nên không thể đảm bảo giá trị bạn định ghi vào có đúng kiểu hay không, và <strong>chặn hẳn</strong>
+khả năng ghi để tránh sai kiểu tiềm ẩn.</p>
+<h3>Wildcard — <code>? super</code> (chỉ cần biết tên, dùng nhiều ở Chương 27-31)</h3>
+<p>Ngược lại với <code>? extends</code>, <code>? super T</code> nghĩa là &quot;kiểu <code>T</code> hoặc <strong>bất kỳ lớp cha</strong> nào của <code>T</code>&quot;,
+thường dùng khi bạn cần <strong>ghi</strong> giá trị kiểu <code>T</code> vào, không cần đọc ra dùng ngay. Nguyên tắc ghi nhớ
+kinh điển gọi là <strong>PECS</strong> (Producer Extends, Consumer Super): nếu tham số chỉ <strong>cung cấp</strong> dữ liệu
+cho bạn đọc, dùng <code>extends</code>; nếu tham số chỉ <strong>nhận</strong> dữ liệu bạn đưa vào, dùng <code>super</code>. Sách sẽ gặp
+lại wildcard cụ thể hơn khi học Stream API (Chương 31).</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Viết generic class <code>Cap&lt;A, B&gt;</code> (Pair) chứa hai giá trị kiểu khác nhau (<code>A</code> và <code>B</code>), có getter
+cho cả hai, và <code>toString()</code> in ra dạng <code>(giaTriA, giaTriB)</code>.</li>
+<li>Viết generic method <code>&lt;T&gt; T layPhanTuCuoi(T[] mang)</code> trả về phần tử cuối cùng của mảng bất kỳ
+kiểu nào.</li>
+<li>Thử tạo <code>HopSo&lt;String&gt;</code> (vi phạm bounded type), đọc lỗi biên dịch, xác nhận đúng như phần
+&quot;Bounded type&quot; giải thích.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Dùng generics với kiểu nguyên thủy</strong> (<code>HopChua&lt;int&gt;</code>) — không hợp lệ, generics <strong>chỉ hoạt động
+với kiểu tham chiếu</strong>. Phải dùng <strong>kiểu bọc (wrapper type)</strong>: <code>HopChua&lt;Integer&gt;</code> thay vì
+<code>HopChua&lt;int&gt;</code> (Java tự động chuyển đổi qua lại giữa <code>int</code> và <code>Integer</code> — cơ chế gọi là
+&quot;autoboxing/unboxing&quot; — khi cần, không cần bạn tự ép kiểu tường minh).</li>
+<li><strong>Quên diamond operator, viết <code>new HopChua&lt;String&gt;()</code> dài dòng thay vì <code>new HopChua&lt;&gt;()</code></strong> — không
+sai, chỉ là thừa; <code>&lt;&gt;</code> để trình biên dịch tự suy luận là đủ trong hầu hết trường hợp.</li>
+<li><strong>Cố gọi <code>datNoiDung(...)</code> qua tham chiếu <code>? extends Number</code></strong> — lỗi biên dịch cố ý (xem phần
+wildcard <code>? extends</code> ở trên), không phải bug — đây là cách generics đảm bảo an toàn kiểu.</li>
+<li><strong>Nhầm generic method với generic class</strong> — generic method khai báo <code>&lt;T&gt;</code> trước kiểu trả về, tồn
+tại độc lập, không đòi hỏi class chứa nó phải là generic class như <code>HopChua&lt;T&gt;</code>. Đọc kỹ chữ ký
+phương thức để phân biệt.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch21-exception-handling.html">&larr; 21. Exception handling</a><a class="nav-next" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

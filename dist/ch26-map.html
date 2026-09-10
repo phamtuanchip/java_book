@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 26 — HashMap, TreeMap, LinkedHashMap — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link active" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 26 — HashMap, TreeMap, LinkedHashMap</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Dùng thành thạo <code>HashMap</code>: <code>put</code>, <code>get</code>, <code>remove</code>, <code>containsKey</code>, <code>getOrDefault</code>.</li>
+<li>Duyệt <code>Map</code> bằng 3 cách: <code>keySet()</code>, <code>values()</code>, <code>entrySet()</code> — biết khi nào dùng cách nào.</li>
+<li>Phân biệt <code>HashMap</code>/<code>LinkedHashMap</code>/<code>TreeMap</code>, tương tự bộ ba <code>Set</code> đã học ở Chương 25.</li>
+<li>Hiểu lại rõ hơn vai trò của <code>hashCode()</code>/<code>equals()</code> (Chương 20) trong việc <code>HashMap</code> tìm đúng key.</li>
+<li>Giải bài toán &quot;đếm số lần xuất hiện&quot; — một trong những ứng dụng phổ biến nhất của <code>Map</code>.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch26-map/"><code>code/ch26-map/</code></a>.</p>
+<h2>Thao tác cơ bản với <code>HashMap</code></h2>
+<pre class="hljs"><code><span class="hljs-type">Map</span>&lt;String, Integer&gt; <span class="hljs-variable">diem</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+diem.put(<span class="hljs-string">&quot;Toan&quot;</span>, <span class="hljs-number">9</span>);
+diem.put(<span class="hljs-string">&quot;Toan&quot;</span>, <span class="hljs-number">10</span>); <span class="hljs-comment">// GHI DE - khong tao them cap moi, &quot;Toan&quot; van la MOT key duy nhat</span>
+
+diem.get(<span class="hljs-string">&quot;Toan&quot;</span>);             <span class="hljs-comment">// 10</span>
+diem.get(<span class="hljs-string">&quot;Ly&quot;</span>);                <span class="hljs-comment">// null - key khong ton tai, KHONG nem loi</span>
+diem.getOrDefault(<span class="hljs-string">&quot;Ly&quot;</span>, <span class="hljs-number">0</span>);    <span class="hljs-comment">// 0 - tra ve gia tri mac dinh neu key khong ton tai</span>
+diem.containsKey(<span class="hljs-string">&quot;Van&quot;</span>);       <span class="hljs-comment">// true/false</span>
+diem.remove(<span class="hljs-string">&quot;Toan&quot;</span>);           <span class="hljs-comment">// xoa cap co key &quot;Toan&quot;</span>
+diem.size();                   <span class="hljs-comment">// so cap key-value hien co</span>
+</code></pre>
+<p>Điểm khác biệt quan trọng nhất so với <code>List</code>/<code>Set</code> (chỉ số/phần tử): <code>Map</code> thao tác theo <strong>khoá
+(key)</strong>, mỗi khoá tương ứng <strong>đúng một</strong> giá trị (value) tại một thời điểm — <code>put</code> với khoá đã tồn
+tại sẽ <strong>ghi đè</strong> giá trị cũ, không tạo thêm cặp mới.</p>
+<p><strong>Lưu ý về <code>get()</code> khi key không tồn tại</strong>: trả về <code>null</code> (không ném lỗi) — nhắc lại nguy cơ
+<code>NullPointerException</code> từ Chương 13 nếu bạn dùng ngay giá trị trả về mà không kiểm tra. Dùng
+<code>getOrDefault(key, giaTriMacDinh)</code> là cách an toàn hơn khi bạn muốn có sẵn một giá trị dự phòng.</p>
+<h2>Ba cách duyệt <code>Map</code></h2>
+<pre class="hljs"><code><span class="hljs-comment">// Cach 1: chi can KEY</span>
+<span class="hljs-keyword">for</span> (String mon : diem.keySet()) {
+    System.out.println(mon);
+}
+
+<span class="hljs-comment">// Cach 2: chi can VALUE</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> diemSo : diem.values()) {
+    System.out.println(diemSo);
+}
+
+<span class="hljs-comment">// Cach 3: can CA HAI key va value cung luc</span>
+<span class="hljs-keyword">for</span> (Map.Entry&lt;String, Integer&gt; entry : diem.entrySet()) {
+    System.out.println(entry.getKey() + <span class="hljs-string">&quot; = &quot;</span> + entry.getValue());
+}
+</code></pre>
+<p><code>entrySet()</code> là cách <strong>hiệu quả nhất</strong> khi bạn cần cả key lẫn value trong cùng vòng lặp — mỗi
+<code>Map.Entry</code> là một &quot;cặp&quot; đại diện đúng một dòng dữ liệu trong <code>Map</code>. Tránh cách viết kém hiệu quả
+(dù vẫn đúng): duyệt <code>keySet()</code> rồi gọi <code>diem.get(key)</code> bên trong vòng lặp để lấy value — cách này
+phải tra cứu lại <code>Map</code> một lần nữa cho mỗi key, trong khi <code>entrySet()</code> đã có sẵn cả hai.</p>
+<h2><code>LinkedHashMap</code> và <code>TreeMap</code></h2>
+<p>Hoàn toàn tương tự bộ ba <code>Set</code> đã học ở Chương 25, áp dụng cho <code>Map</code>:</p>
+<pre class="hljs"><code><span class="hljs-type">Map</span>&lt;String, Integer&gt; <span class="hljs-variable">theoThuTu</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedHashMap</span>&lt;&gt;(); <span class="hljs-comment">// giu dung thu tu KEY da them vao</span>
+<span class="hljs-type">Map</span>&lt;String, Integer&gt; <span class="hljs-variable">sapXep</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TreeMap</span>&lt;&gt;();           <span class="hljs-comment">// tu dong sap xep theo KEY</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Cần gì?</th>
+<th>Chọn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chỉ cần tra cứu nhanh, không quan tâm thứ tự</td>
+<td><code>HashMap</code></td>
+</tr>
+<tr>
+<td>Tra cứu nhanh, giữ đúng thứ tự các key đã thêm vào</td>
+<td><code>LinkedHashMap</code></td>
+</tr>
+<tr>
+<td>Tra cứu, và key luôn cần duyệt theo thứ tự sắp xếp</td>
+<td><code>TreeMap</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Vai trò của <code>hashCode()</code>/<code>equals()</code> trong <code>HashMap</code></h2>
+<p><code>HashMap</code> dùng <strong>key</strong> (không phải value) để tính <code>hashCode()</code> xác định vị trí lưu trữ, y hệt cách
+<code>HashSet</code> dùng phần tử (Chương 25) — thực tế, <code>HashSet</code> <strong>bên trong được cài đặt dựa trên</strong>
+<code>HashMap</code> (mỗi phần tử của <code>Set</code> là một key trong <code>HashMap</code> ẩn, value chỉ là giá trị đánh dấu). Hệ
+quả: nếu bạn dùng một object tự định nghĩa <strong>làm key</strong> mà quên override <code>equals</code>/<code>hashCode</code> đúng
+cách, <code>get()</code> với một object khác (dù nội dung giống hệt key gốc) sẽ <strong>không tìm thấy</strong> giá trị đã
+lưu — vì <code>HashMap</code> coi hai object đó là hai key khác nhau hoàn toàn (giống hệt lỗi đã minh hoạ với
+<code>HashSet</code> ở Chương 25).</p>
+<h2>Bài tập kinh điển: đếm số lần xuất hiện</h2>
+<pre class="hljs"><code><span class="hljs-type">Map</span>&lt;String, Integer&gt; <span class="hljs-variable">demSoLan</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+<span class="hljs-keyword">for</span> (String tu : mangTu) {
+    <span class="hljs-keyword">if</span> (demSoLan.containsKey(tu)) {
+        demSoLan.put(tu, demSoLan.get(tu) + <span class="hljs-number">1</span>);
+    } <span class="hljs-keyword">else</span> {
+        demSoLan.put(tu, <span class="hljs-number">1</span>);
+    }
+}
+</code></pre>
+<p>Đây là một trong những khuôn mẫu (pattern) dùng <code>Map</code> phổ biến nhất trong lập trình thực tế: đếm
+tần suất xuất hiện của từng phần tử trong một tập dữ liệu. Cách viết gọn hơn dùng <code>merge()</code>:</p>
+<pre class="hljs"><code>demSoLan.merge(tu, <span class="hljs-number">1</span>, Integer::sum);
+</code></pre>
+<p><code>merge(key, giaTriMoi, hamKetHop)</code> tự động xử lý cả hai trường hợp: nếu <code>key</code> <strong>chưa có</strong>, gán
+<code>giaTriMoi</code> (<code>1</code>); nếu <code>key</code> <strong>đã có</strong>, áp dụng <code>hamKetHop</code> lên (giá trị cũ, giá trị mới) để ra giá
+trị cuối cùng. <code>Integer::sum</code> là <strong>method reference</strong> (Chương 30) — hiểu đơn giản ở đây là &quot;hàm
+cộng hai số lại&quot; — trong trường hợp này nghĩa là &quot;cộng dồn số đếm cũ với 1&quot;.</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Viết chương trình đếm số lần xuất hiện của từng ký tự trong một chuỗi (dùng <code>Map&lt;Character, Integer&gt;</code>,
+duyệt chuỗi bằng <code>charAt(i)</code> như Chương 11).</li>
+<li>Dùng <code>Map&lt;String, List&lt;String&gt;&gt;</code> để nhóm một danh sách tên theo chữ cái đầu tiên (ví dụ: &quot;An&quot;,
+&quot;Anh&quot; thuộc nhóm &quot;A&quot;) — cần khởi tạo <code>List</code> mới cho key lần đầu xuất hiện trước khi thêm phần tử
+vào.</li>
+<li>Viết phương thức tìm key có value <strong>lớn nhất</strong> trong một <code>Map&lt;String, Integer&gt;</code>, dùng vòng lặp
+<code>entrySet()</code>.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong><code>NullPointerException</code> khi dùng luôn giá trị trả về của <code>get()</code> mà không kiểm tra <code>null</code></strong> —
+key không tồn tại trả về <code>null</code>, không ném lỗi. Dùng <code>getOrDefault</code> hoặc kiểm tra <code>containsKey</code>
+trước khi thao tác tiếp với giá trị lấy ra.</li>
+<li><strong>Dùng object tự định nghĩa làm key mà quên override <code>equals</code>/<code>hashCode</code></strong> — <code>get()</code> với một
+object khác object gốc (dù nội dung giống hệt) sẽ không tìm thấy giá trị, dù bạn &quot;biết chắc&quot; nó
+phải có trong <code>Map</code>. Xem lại phần &quot;Vai trò của hashCode()/equals()&quot; ở trên.</li>
+<li><strong>Nhầm lẫn <code>put()</code> ghi đè giá trị, tưởng nó &quot;cộng thêm&quot;</strong> — <code>put(&quot;Toan&quot;, 5)</code> sau
+<code>put(&quot;Toan&quot;, 3)</code> cho kết quả <code>key &quot;Toan&quot; = 5</code>, không phải <code>8</code>. Muốn cộng dồn, dùng <code>merge()</code> hoặc
+tự lấy giá trị cũ ra cộng thêm rồi <code>put()</code> lại.</li>
+<li><strong>Sửa <code>Map</code> (thêm/xóa cặp) ngay trong vòng lặp <code>for-each</code> duyệt trên chính <code>Map</code> đó</strong> — ném
+<code>ConcurrentModificationException</code> lúc chạy (sẽ giải thích rõ nguyên nhân kỹ thuật ở Chương 27,
+khi học <code>Iterator</code>). Nếu cần sửa trong lúc duyệt, dùng <code>Iterator</code> trực tiếp thay vì for-each.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch25-set.html">&larr; 25. HashSet, TreeSet, LinkedHashSet</a><a class="nav-next" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

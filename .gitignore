@@ -25,7 +25,7 @@ replay_pid*
 
 # Book build tooling
 node_modules/
-dist/
+# dist/ duoc commit theo yeu cau (ban HTML + PDF da build san trong repo)
 
 # File sinh ra khi chay code mau Chuong 34 (File I/O)
 code/ch34-file-io/*.txt

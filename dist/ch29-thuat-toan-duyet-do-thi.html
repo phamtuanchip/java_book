@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 29 — Duyệt đồ thị/cây: BFS & DFS — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link active" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 29 — Duyệt đồ thị/cây: BFS &amp; DFS</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Biểu diễn được đồ thị/cây trong Java bằng danh sách kề (adjacency list).</li>
+<li>Cài đặt BFS (duyệt theo chiều rộng) dùng <code>Queue</code>.</li>
+<li>Cài đặt DFS (duyệt theo chiều sâu) dùng đệ quy, và hiểu <strong>đệ quy</strong> là gì (khái niệm mới, lần đầu
+xuất hiện trong sách).</li>
+<li>Nhận ra BFS và DFS thực chất chỉ khác nhau ở <strong>cấu trúc dữ liệu</strong> dùng để ghi nhớ thứ tự xử lý
+(Queue vs Stack).</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch29-thuat-toan-duyet-do-thi/"><code>code/ch29-thuat-toan-duyet-do-thi/</code></a>.</p>
+<h2>Biểu diễn đồ thị bằng danh sách kề</h2>
+<p><strong>Đồ thị</strong> (graph) gồm các <strong>đỉnh</strong> (node/vertex) và <strong>cạnh</strong> (edge) nối giữa chúng. Cách biểu diễn
+phổ biến nhất trong code: <strong>danh sách kề</strong> (adjacency list) — với mỗi đỉnh, lưu danh sách các đỉnh
+nó nối trực tiếp tới:</p>
+<pre class="hljs"><code><span class="hljs-type">List</span>&lt;List&lt;Integer&gt;&gt; <span class="hljs-variable">doThi</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; soDinh; i++) {
+    doThi.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;());
+}
+doThi.get(<span class="hljs-number">0</span>).add(<span class="hljs-number">1</span>); <span class="hljs-comment">// dinh 0 noi toi dinh 1</span>
+doThi.get(<span class="hljs-number">0</span>).add(<span class="hljs-number">2</span>); <span class="hljs-comment">// dinh 0 noi toi dinh 2</span>
+</code></pre>
+<p><code>doThi.get(i)</code> trả về danh sách các đỉnh <strong>kề</strong> (nối trực tiếp) với đỉnh <code>i</code>. Cây (tree) — cấu trúc
+bạn có thể quen thuộc hơn (thư mục lồng nhau, cây gia phả...) — thực chất chỉ là một dạng <strong>đặc
+biệt</strong> của đồ thị (không có chu trình, mỗi đỉnh chỉ có đúng một đỉnh cha), nên mọi thuật toán duyệt
+đồ thị trong chương này áp dụng được trực tiếp cho cây.</p>
+<h2>BFS (Breadth-First Search) — duyệt theo chiều rộng</h2>
+<pre class="hljs"><code><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">bfs</span><span class="hljs-params">(List&lt;List&lt;Integer&gt;&gt; doThi, <span class="hljs-type">int</span> dinhBatDau)</span> {
+    <span class="hljs-type">boolean</span>[] <span class="hljs-variable">daTham</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[doThi.size()];
+    <span class="hljs-type">Queue</span>&lt;Integer&gt; <span class="hljs-variable">hangDoi</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();
+
+    daTham[dinhBatDau] = <span class="hljs-literal">true</span>;
+    hangDoi.offer(dinhBatDau);
+
+    <span class="hljs-keyword">while</span> (!hangDoi.isEmpty()) {
+        <span class="hljs-type">int</span> <span class="hljs-variable">dinh</span> <span class="hljs-operator">=</span> hangDoi.poll();
+        System.out.print(dinh + <span class="hljs-string">&quot; &quot;</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> dinhKe : doThi.get(dinh)) {
+            <span class="hljs-keyword">if</span> (!daTham[dinhKe]) {
+                daTham[dinhKe] = <span class="hljs-literal">true</span>;
+                hangDoi.offer(dinhKe);
+            }
+        }
+    }
+}
+</code></pre>
+<p>BFS thăm <strong>tất cả đỉnh ở cùng khoảng cách</strong> (số cạnh) từ đỉnh bắt đầu, trước khi sang khoảng cách xa
+hơn — giống cách sóng lan toả đều ra mọi hướng từ một điểm ném xuống nước. Với cây ví dụ trong code
+mẫu (đỉnh 0 là gốc, 1-2 là con của 0, 3-4-5-6 là cháu), BFS cho kết quả <code>0 1 2 3 4 5 6</code> — đúng
+<strong>từng tầng</strong> một.</p>
+<p>Cơ chế: dùng <code>Queue</code> (FIFO, Chương 23) để ghi nhớ các đỉnh <strong>đã phát hiện nhưng chưa xử lý</strong> — mỗi
+lần lấy một đỉnh ra khỏi hàng đợi để xử lý, đồng thời <strong>thêm mọi đỉnh kề chưa thăm</strong> của nó vào
+cuối hàng đợi. Vì hàng đợi luôn xử lý phần tử <strong>cũ nhất</strong> trước, các đỉnh ở tầng gần hơn (được thêm
+vào trước) luôn được xử lý trước các đỉnh ở tầng xa hơn.</p>
+<p>Mảng <code>daTham</code> (visited) <strong>bắt buộc phải có</strong> — nếu không, với đồ thị có chu trình (một đỉnh có
+đường quay lại chính nó qua các cạnh khác), thuật toán sẽ <strong>lặp vô hạn</strong>, liên tục thăm lại các
+đỉnh đã thăm.</p>
+<h2>DFS (Depth-First Search) — duyệt theo chiều sâu, và khái niệm đệ quy</h2>
+<pre class="hljs"><code><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(List&lt;List&lt;Integer&gt;&gt; doThi, <span class="hljs-type">int</span> dinh, <span class="hljs-type">boolean</span>[] daTham)</span> {
+    daTham[dinh] = <span class="hljs-literal">true</span>;
+    System.out.print(dinh + <span class="hljs-string">&quot; &quot;</span>);
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> dinhKe : doThi.get(dinh)) {
+        <span class="hljs-keyword">if</span> (!daTham[dinhKe]) {
+            dfs(doThi, dinhKe, daTham); <span class="hljs-comment">// phuong thuc TU GOI LAI CHINH NO</span>
+        }
+    }
+}
+</code></pre>
+<p>DFS đi <strong>thật sâu theo một nhánh trước</strong>, chỉ quay lại thử nhánh khác khi không còn đường đi tiếp —
+giống cách bạn dò một mê cung: đi theo một lối tới khi bí, mới lùi lại thử lối khác. Với cùng cây
+ví dụ, DFS cho kết quả <code>0 1 3 4 2 5 6</code> — đi hết nhánh trái (0→1→3, lùi lại →4) rồi mới sang nhánh
+phải (0→2→5, lùi lại →6).</p>
+<h3>Đệ quy (recursion) là gì?</h3>
+<p>Đây là <strong>lần đầu tiên</strong> sách dùng kỹ thuật này: <code>dfs(...)</code> <strong>tự gọi lại chính nó</strong> bên trong thân
+của nó — gọi là <strong>đệ quy</strong>. Mỗi lần <code>dfs</code> gọi tiếp <code>dfs</code> cho một đỉnh kề, một &quot;phiên bản mới&quot; của
+phương thức bắt đầu chạy (với <code>dinh</code> là tham số khác), phiên bản gọi nó tạm &quot;treo&quot; lại, đợi phiên
+bản mới chạy xong hoàn toàn rồi mới tiếp tục vòng lặp <code>for</code> của chính nó. Java tự quản lý việc &quot;treo
+và tiếp tục&quot; này bằng một cấu trúc bên trong gọi là <strong>call stack</strong> (ngăn xếp lời gọi) — mỗi lần gọi
+đệ quy chồng thêm một &quot;lớp&quot; mới lên ngăn xếp, lớp đó chỉ được gỡ ra khi lời gọi đó <strong>hoàn toàn kết
+thúc</strong> (chạy hết thân phương thức, hoặc gặp <code>return</code>).</p>
+<p>Đệ quy luôn cần một <strong>điều kiện dừng</strong> — ở đây, điều kiện <code>if (!daTham[dinhKe])</code> đảm bảo <code>dfs</code>
+không bao giờ tự gọi lại cho một đỉnh <strong>đã thăm</strong>, nên cuối cùng sẽ hết đỉnh mới để gọi tiếp và tự
+dừng. Thiếu điều kiện dừng đúng đắn sẽ gây đệ quy <strong>vô hạn</strong>, cuối cùng ném lỗi
+<code>StackOverflowError</code> (ngăn xếp lời gọi đầy, không phải lỗi bạn tự bắt bằng <code>try/catch</code> thông
+thường — đây là dấu hiệu gần như chắc chắn của lỗi logic đệ quy).</p>
+<h2>DFS không dùng đệ quy — làm rõ mối quan hệ BFS/DFS</h2>
+<pre class="hljs"><code><span class="hljs-type">Deque</span>&lt;Integer&gt; <span class="hljs-variable">nganXep</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;(); <span class="hljs-comment">// dung lam STACK (LIFO)</span>
+nganXep.push(dinhBatDau);
+<span class="hljs-keyword">while</span> (!nganXep.isEmpty()) {
+    <span class="hljs-type">int</span> <span class="hljs-variable">dinh</span> <span class="hljs-operator">=</span> nganXep.pop(); <span class="hljs-comment">// lay dinh THEM VAO GAN DAY NHAT</span>
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Mọi thuật toán đệ quy đều <strong>viết lại được</strong> dưới dạng vòng lặp thường, dùng một cấu trúc dữ liệu
+tường minh thay cho call stack ngầm định của Java. Với DFS, cấu trúc đó là <strong>ngăn xếp (stack, LIFO
+— Vào Sau Ra Trước)</strong>: <code>push</code> thêm vào &quot;đỉnh&quot; ngăn xếp, <code>pop</code> lấy ra đúng phần tử <strong>vừa thêm gần
+nhất</strong>.</p>
+<p>So sánh với BFS: <strong>BFS dùng Queue (FIFO), DFS dùng Stack (LIFO)</strong> — đây là khác biệt cốt lõi duy
+nhất giữa hai thuật toán, phần logic còn lại (đánh dấu đã thăm, duyệt đỉnh kề) gần như giống hệt
+nhau. Hiểu rõ điểm này giúp bạn nhớ và cài đặt lại cả hai thuật toán dễ dàng hơn nhiều so với học
+thuộc lòng từng đoạn code riêng biệt.</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Thêm một đỉnh thứ 8 vào đồ thị mẫu, nối với đỉnh 3, chạy lại cả BFS và DFS, dự đoán kết quả
+trước khi chạy để kiểm tra.</li>
+<li>Viết một đồ thị <strong>có chu trình</strong> (ví dụ thêm cạnh nối đỉnh 6 quay lại đỉnh 0), chạy BFS/DFS,
+xác nhận thuật toán vẫn dừng đúng nhờ mảng <code>daTham</code> (không bị lặp vô hạn).</li>
+<li>Viết một biến thể BFS trả về <strong>khoảng cách</strong> (số cạnh) từ đỉnh bắt đầu tới từng đỉnh khác, thay
+vì chỉ in ra thứ tự duyệt (gợi ý: dùng thêm một mảng <code>int[] khoangCach</code>, cập nhật
+<code>khoangCach[dinhKe] = khoangCach[dinh] + 1</code> mỗi khi thêm <code>dinhKe</code> vào hàng đợi).</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Quên đánh dấu <code>daTham</code>, hoặc đánh dấu sai thời điểm</strong> — gây duyệt lặp lại vô hạn với đồ thị có
+chu trình, hoặc duyệt trùng đỉnh không cần thiết. Trong BFS, nên đánh dấu <strong>ngay khi thêm vào
+hàng đợi</strong> (không phải khi lấy ra xử lý) để tránh thêm trùng một đỉnh nhiều lần trước khi nó được
+xử lý.</li>
+<li><strong><code>StackOverflowError</code> khi DFS đệ quy trên đồ thị/cây rất sâu</strong> — call stack có giới hạn kích
+thước; với dữ liệu đủ lớn (hàng chục nghìn tầng sâu trở lên), bản đệ quy có thể tràn ngăn xếp.
+Bản không đệ quy (dùng <code>Deque</code> làm stack tường minh) không gặp giới hạn này vì ngăn xếp tự cấp
+phát trên heap thay vì call stack cố định.</li>
+<li><strong>Nhầm lẫn BFS luôn &quot;tốt hơn&quot; hoặc &quot;đúng hơn&quot; DFS (hoặc ngược lại)</strong> — cả hai chỉ là hai chiến
+lược duyệt khác nhau, phù hợp cho bài toán khác nhau: BFS thường dùng khi cần tìm đường đi
+<strong>ngắn nhất</strong> (tính theo số cạnh) trong đồ thị không trọng số; DFS thường dùng khi cần khám phá
+<strong>toàn bộ</strong> một nhánh trước khi xét nhánh khác (ví dụ: kiểm tra chu trình, sắp xếp tô-pô).</li>
+<li><strong>Trong bản DFS không đệ quy, quên đảo ngược thứ tự khi <code>push</code> các đỉnh kề</strong> — vì Stack là LIFO,
+nếu không đảo ngược thứ tự thêm vào, thứ tự duyệt cuối cùng sẽ <strong>ngược lại</strong> so với bản đệ quy
+(dù vẫn là DFS hợp lệ, chỉ khác thứ tự cụ thể) — xem chi tiết cách xử lý trong
+<code>DepthFirstSearchIterative.java</code>.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch28-thuat-toan-tim-kiem.html">&larr; 28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a><a class="nav-next" href="ch30-lambda.html">30. Lambda expression & functional interface &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 41 — Unit test với JUnit 5 — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link active" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 41 — Unit test với JUnit 5</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Hiểu unit test là gì, vì sao viết test quan trọng không kém viết code chính.</li>
+<li>Viết được test bằng JUnit 5: <code>@Test</code>, <code>assertEquals</code>, <code>assertThrows</code>.</li>
+<li>Dùng <code>@BeforeEach</code> để chuẩn bị trạng thái sạch cho mỗi test.</li>
+<li>Hiểu tư duy &quot;thiết kế dễ test&quot; — tách logic khỏi I/O.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch41-junit/"><code>code/ch41-junit/</code></a>.</p>
+<h2>Unit test là gì, vì sao cần?</h2>
+<p>Từ đầu sách, bạn kiểm tra code &quot;đúng&quot; bằng cách chạy chương trình và <strong>tự mắt</strong> xem kết quả in ra
+có đúng không. Cách này có vấn đề rõ ràng khi chương trình lớn dần: mỗi lần sửa code, bạn phải <strong>tự
+kiểm tra lại thủ công</strong> mọi tính năng để chắc chắn không làm hỏng gì — tốn thời gian, dễ bỏ sót, và
+không lặp lại được một cách đáng tin cậy.</p>
+<p><strong>Unit test</strong> là code <strong>tự động kiểm tra</strong> một đơn vị nhỏ của chương trình (thường là một phương
+thức) có hoạt động đúng như mong đợi hay không — viết một lần, chạy lại <strong>bất kỳ lúc nào</strong> (đặc
+biệt sau mỗi lần sửa code) chỉ bằng một lệnh, không cần tự tay kiểm tra lại bằng mắt.</p>
+<h2>Viết test đầu tiên với JUnit 5</h2>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculatorTest</span> {
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-type">void</span> <span class="hljs-title function_">testCongHaiSoDuong</span><span class="hljs-params">()</span> {
+        <span class="hljs-type">Calculator</span> <span class="hljs-variable">calculator</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Calculator</span>();
+        <span class="hljs-type">double</span> <span class="hljs-variable">ketQua</span> <span class="hljs-operator">=</span> calculator.cong(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+        assertEquals(<span class="hljs-number">5</span>, ketQua);
+    }
+}
+</code></pre>
+<ul>
+<li><strong>Quy ước đặt tên</strong>: class test tên <code>&lt;TenLopCanTest&gt;Test</code> (<code>CalculatorTest</code> cho <code>Calculator</code>) —
+không bắt buộc về mặt kỹ thuật, nhưng là quy ước gần như phổ quát trong cộng đồng Java.</li>
+<li><code>@Test</code> — annotation đánh dấu một phương thức là <strong>một test case</strong>, JUnit tự nhận diện và chạy
+nó khi bạn chạy bộ test.</li>
+<li><code>assertEquals(mongDoi, thucTe)</code> — khẳng định hai giá trị <strong>phải bằng nhau</strong>; nếu không, test
+<strong>thất bại (fail)</strong>, JUnit báo rõ giá trị mong đợi và giá trị thực tế khác nhau ra sao.</li>
+</ul>
+<h2><code>@BeforeEach</code> — chuẩn bị trạng thái sạch cho mỗi test</h2>
+<pre class="hljs"><code><span class="hljs-keyword">private</span> Calculator calculator;
+
+<span class="hljs-meta">@BeforeEach</span>
+<span class="hljs-type">void</span> <span class="hljs-title function_">setUp</span><span class="hljs-params">()</span> {
+    calculator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Calculator</span>();
+}
+</code></pre>
+<p>Phương thức đánh dấu <code>@BeforeEach</code> chạy <strong>trước mỗi</strong> phương thức <code>@Test</code> trong cùng class — đảm
+bảo mỗi test bắt đầu với một object <code>calculator</code> <strong>hoàn toàn mới</strong>, không bị ảnh hưởng bởi bất kỳ
+thay đổi trạng thái nào từ test chạy trước đó. Đây là nguyên tắc quan trọng: <strong>mỗi test phải độc
+lập hoàn toàn</strong> với các test khác — thứ tự chạy test không nên ảnh hưởng tới kết quả.</p>
+<h2><code>assertThrows</code> — kiểm tra exception được ném đúng cách</h2>
+<pre class="hljs"><code><span class="hljs-meta">@Test</span>
+<span class="hljs-type">void</span> <span class="hljs-title function_">testChiaChoKhong</span><span class="hljs-params">()</span> {
+    <span class="hljs-type">ArithmeticException</span> <span class="hljs-variable">loi</span> <span class="hljs-operator">=</span> assertThrows(
+        ArithmeticException.class,
+        () -&gt; calculator.chia(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>)
+    );
+    assertEquals(<span class="hljs-string">&quot;Khong the chia cho 0&quot;</span>, loi.getMessage());
+}
+</code></pre>
+<p><code>assertThrows(KieuException.class, lambda)</code> (Chương 30) xác nhận đoạn code trong lambda <strong>thực sự
+ném ra đúng loại exception mong đợi</strong> — nếu không ném gì cả, hoặc ném <strong>sai loại</strong> exception, test
+thất bại. Đây là cách kiểm thử <strong>cả những tình huống lỗi</strong> (Chương 21) một cách có hệ thống, không
+chỉ kiểm tra &quot;đường đi đúng&quot; (happy path).</p>
+<h2><code>@DisplayName</code> — mô tả test dễ đọc hơn</h2>
+<pre class="hljs"><code><span class="hljs-meta">@Test</span>
+<span class="hljs-meta">@DisplayName(&quot;Chia cho 0 phai nem ArithmeticException&quot;)</span>
+<span class="hljs-type">void</span> <span class="hljs-title function_">testChiaChoKhong</span><span class="hljs-params">()</span> { ... }
+</code></pre>
+<p>Tuỳ chọn, nhưng hữu ích: tên hiển thị trong báo cáo kết quả test rõ ràng hơn tên phương thức (vốn
+thường bị giới hạn theo quy tắc đặt tên biến/phương thức của Java, không có dấu cách hay ký tự đặc
+biệt).</p>
+<h2>Thiết kế code &quot;dễ test&quot;</h2>
+<p>So sánh <code>Calculator</code> trong code mẫu chương này (chỉ chứa phương thức tính toán thuần tuý) với việc
+viết logic đó <strong>lẫn trực tiếp</strong> vào một chương trình đọc <code>Scanner</code>/in <code>System.out</code> — nếu logic tính
+toán và logic nhập/xuất trộn lẫn vào nhau, viết test cho riêng phần tính toán trở nên khó khăn hơn
+nhiều (phải giả lập input bàn phím, bắt output console...). <strong>Tách biệt logic nghiệp vụ khỏi I/O</strong>
+(đọc/ghi file, console, mạng...) là một nguyên tắc thiết kế quan trọng, không chỉ giúp code rõ ràng
+hơn mà còn giúp viết test dễ dàng hơn hẳn — bạn sẽ gặp lại tư duy này khi học kiến trúc phần mềm ở
+Chương 44-45.</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Viết <code>SinhVienTest</code> kiểm thử class <code>SinhVien</code> (Chương 13): test <code>tinhDiemTrungBinh()</code> với danh
+sách điểm rỗng (kết quả mong đợi <code>0.0</code>), và với vài điểm cụ thể.</li>
+<li>Viết test cho phương thức <code>isPrime</code> bạn đã viết ở bài tập Chương 10, kiểm tra cả trường hợp số
+nguyên tố, không phải nguyên tố, và trường hợp biên (0, 1, số âm).</li>
+<li>Viết một test <strong>cố ý sai</strong> (ví dụ <code>assertEquals(6, calculator.cong(2, 3))</code> — sai vì kết quả đúng
+là <code>5</code>), chạy để tự thấy JUnit báo lỗi thế nào, đọc kỹ thông báo &quot;expected/actual&quot; để quen mặt
+định dạng báo lỗi.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Test phụ thuộc lẫn nhau</strong> (test B chỉ chạy đúng nếu test A chạy trước và để lại trạng thái nào
+đó) — vi phạm nguyên tắc độc lập, gây lỗi khó hiểu khi JUnit chạy test theo thứ tự khác (JUnit
+<strong>không đảm bảo</strong> thứ tự chạy test mặc định). Luôn dùng <code>@BeforeEach</code> để đảm bảo trạng thái sạch.</li>
+<li><strong>Chỉ test &quot;đường đi đúng&quot;, quên test trường hợp lỗi/biên</strong> — ví dụ chỉ test <code>chia(5, 2)</code> mà quên
+test <code>chia(5, 0)</code>. Luôn nghĩ tới các trường hợp biên: giá trị <code>0</code>, âm, rỗng, <code>null</code>, giá trị cực
+lớn/nhỏ.</li>
+<li><strong>Viết test rồi không bao giờ chạy lại</strong> — mất hết giá trị của việc có test tự động. Test chỉ hữu
+ích khi được chạy thường xuyên (lý tưởng: sau mỗi lần sửa code, hoặc tự động qua CI — nằm ngoài
+phạm vi sách này).</li>
+<li><strong>So sánh số thực (<code>double</code>) bằng <code>assertEquals</code> không có sai số cho phép</strong> — số thực có thể có
+sai số làm tròn rất nhỏ (ví dụ <code>0.1 + 0.2</code> không chính xác bằng <code>0.3</code> tuyệt đối ở tầng bit); JUnit
+có overload <code>assertEquals(mongDoi, thucTe, saiSoChoPhep)</code> dành riêng cho <code>double</code>, nên dùng khi so
+sánh kết quả phép tính số thực phức tạp.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch40-virtual-thread.html">&larr; 40. Giới thiệu Virtual Thread</a><a class="nav-next" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

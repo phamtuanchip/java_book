@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 16 — Kế thừa (Inheritance) — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link active" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 16 — Kế thừa (Inheritance)</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Dùng <code>extends</code> để một class kế thừa field và phương thức từ class khác.</li>
+<li>Gọi constructor lớp cha bằng <code>super(...)</code>, hiểu vì sao gần như luôn bắt buộc.</li>
+<li>Override (ghi đè) phương thức của lớp cha, dùng <code>@Override</code> đúng cách.</li>
+<li>Gọi lại phiên bản của lớp cha từ lớp con bằng <code>super.tenPhuongThuc(...)</code>.</li>
+<li>Phân biệt <strong>overriding</strong> (Chương này) với <strong>overloading</strong> (đã học ở Chương 10) — hai khái niệm
+rất dễ nhầm vì tên gần giống nhau.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch16-ke-thua/"><code>code/ch16-ke-thua/</code></a>.</p>
+<h2>Vấn đề: trùng lặp code giữa các class liên quan</h2>
+<p>Giả sử bạn cần mô hình hoá nhiều loại nhân viên: nhân viên thường, nhân viên bán hàng (có thêm hoa
+hồng), nhân viên quản lý (có thêm phụ cấp). Không có kế thừa, bạn phải viết lặp lại <code>ten</code>,
+<code>luongCoBan</code>, <code>getTen()</code> trong <strong>cả ba</strong> class riêng biệt — trùng lặp, và nếu sau này cần sửa cách
+lưu <code>ten</code>, phải sửa ở cả ba nơi.</p>
+<h2><code>extends</code> — kế thừa từ một class khác</h2>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">NhanVien</span> {
+    <span class="hljs-keyword">protected</span> String ten;
+    <span class="hljs-keyword">protected</span> <span class="hljs-type">double</span> luongCoBan;
+
+    <span class="hljs-type">public</span> <span class="hljs-title function_">NhanVien</span><span class="hljs-params">(String ten, <span class="hljs-type">double</span> luongCoBan)</span> {
+        <span class="hljs-built_in">this</span>.ten = ten;
+        <span class="hljs-built_in">this</span>.luongCoBan = luongCoBan;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">String</span> <span class="hljs-title function_">getTen</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> ten;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">tinhLuong</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> luongCoBan;
+    }
+}
+</code></pre>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">NhanVienBanHang</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">NhanVien</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> doanhSo;
+
+    <span class="hljs-type">public</span> <span class="hljs-title function_">NhanVienBanHang</span><span class="hljs-params">(String ten, <span class="hljs-type">double</span> luongCoBan, <span class="hljs-type">double</span> doanhSo)</span> {
+        <span class="hljs-built_in">super</span>(ten, luongCoBan);
+        <span class="hljs-built_in">this</span>.doanhSo = doanhSo;
+    }
+}
+</code></pre>
+<p><code>NhanVienBanHang extends NhanVien</code> nghĩa là <code>NhanVienBanHang</code> <strong>tự động có sẵn</strong> mọi field và
+phương thức <code>public</code>/<code>protected</code> của <code>NhanVien</code> (<code>ten</code>, <code>luongCoBan</code>, <code>getTen()</code>, <code>tinhLuong()</code>),
+mà không cần viết lại — gọi <code>NhanVien</code> là <strong>lớp cha (superclass/parent class)</strong>, <code>NhanVienBanHang</code>
+là <strong>lớp con (subclass/child class)</strong>.</p>
+<h2>Vì sao field cần <code>protected</code> thay vì <code>private</code> ở đây?</h2>
+<p>Ở Chương 14, nguyên tắc là field nên <code>private</code>. Nhưng <code>private</code> <strong>giấu hoàn toàn</strong>, kể cả với lớp
+con — lớp con sẽ <strong>không truy cập trực tiếp được</strong> field <code>private</code> của lớp cha. <code>protected</code> (nhắc
+lại bảng ở Chương 14) mở thêm một mức: <strong>cho phép lớp con</strong> (kể cả ở package khác) truy cập trực
+tiếp, trong khi vẫn giấu khỏi phần còn lại của chương trình. Đây là lý do <code>NhanVien.ten</code> và
+<code>NhanVien.luongCoBan</code> khai báo <code>protected</code> — để <code>NhanVienQuanLy.tinhLuong()</code> dùng được <code>luongCoBan</code>
+trực tiếp (xem phần override bên dưới).</p>
+<h2><code>super(...)</code> — gọi constructor lớp cha</h2>
+<pre class="hljs"><code><span class="hljs-type">public</span> <span class="hljs-title function_">NhanVienBanHang</span><span class="hljs-params">(String ten, <span class="hljs-type">double</span> luongCoBan, <span class="hljs-type">double</span> doanhSo)</span> {
+    <span class="hljs-built_in">super</span>(ten, luongCoBan); <span class="hljs-comment">// PHAI la dong dau tien trong constructor</span>
+    <span class="hljs-built_in">this</span>.doanhSo = doanhSo;
+}
+</code></pre>
+<p><code>super(...)</code> gọi constructor của lớp cha, để lớp cha tự khởi tạo đúng phần dữ liệu của nó
+(<code>ten</code>, <code>luongCoBan</code>). Quy tắc bắt buộc: nếu bạn gọi <code>super(...)</code>, nó <strong>phải là dòng đầu tiên</strong>
+trong constructor lớp con. Nếu bạn <strong>không</strong> viết <code>super(...)</code> tường minh, Java <strong>tự động chèn</strong>
+một lời gọi <code>super()</code> không tham số ở đầu constructor — nếu lớp cha <strong>không có</strong> constructor không
+tham số (như <code>NhanVien</code> ở đây — nó chỉ có constructor 2 tham số), việc này gây <strong>lỗi biên dịch</strong>,
+buộc bạn phải tự viết <code>super(...)</code> với đúng tham số phù hợp.</p>
+<h2>Override (ghi đè) phương thức</h2>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">NhanVienBanHang</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">NhanVien</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">double</span> <span class="hljs-variable">TY_LE_HOA_HONG</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.05</span>;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">tinhLuong</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> luongCoBan + doanhSo * TY_LE_HOA_HONG;
+    }
+}
+</code></pre>
+<p><strong>Override</strong> là việc lớp con định nghĩa lại một phương thức đã có ở lớp cha, <strong>cùng tên, cùng tham
+số, cùng kiểu trả về</strong> — thay thế hoàn toàn hành vi của lớp cha bằng hành vi mới khi phương thức đó
+được gọi trên object của lớp con.</p>
+<p><code>@Override</code> là một <strong>annotation</strong> (chú thích đặc biệt, không ảnh hưởng logic chạy) — báo cho trình
+biên dịch biết &quot;tôi cố ý override phương thức này&quot;. Lợi ích: nếu bạn gõ sai tên phương thức, sai
+kiểu tham số (vô tình tạo ra một phương thức overload mới thay vì override như ý muốn),
+<code>@Override</code> khiến trình biên dịch <strong>báo lỗi ngay</strong> thay vì âm thầm để bạn tạo nhầm một phương thức
+khác. <strong>Luôn dùng <code>@Override</code></strong> khi có ý định ghi đè — đây là thói quen tốt gần như bắt buộc trong
+code Java thực tế.</p>
+<h2><code>super.tenPhuongThuc(...)</code> — gọi lại phiên bản của lớp cha</h2>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">NhanVienQuanLy</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">NhanVien</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> phuCapQuanLy;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">tinhLuong</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.tinhLuong() + phuCapQuanLy;
+    }
+}
+</code></pre>
+<p>Đôi khi lớp con muốn <strong>mở rộng</strong> hành vi của lớp cha thay vì thay thế hoàn toàn — <code>super.tinhLuong()</code>
+gọi đúng phiên bản <code>tinhLuong()</code> của <code>NhanVien</code>, rồi cộng thêm phần riêng của <code>NhanVienQuanLy</code>. Cách
+này tránh việc phải chép lại logic <code>return luongCoBan;</code> một lần nữa trong <code>NhanVienQuanLy</code> — nếu
+sau này cách tính lương cơ bản ở <code>NhanVien</code> thay đổi, <code>NhanVienQuanLy</code> tự động thừa hưởng thay đổi
+đó mà không cần sửa gì.</p>
+<h2>Overriding khác Overloading như thế nào?</h2>
+<p>Đây là cặp khái niệm <strong>rất dễ nhầm</strong> vì tên gần giống nhau trong tiếng Anh lẫn cách phát âm:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Overloading (Chương 10)</th>
+<th>Overriding (chương này)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Xảy ra giữa</td>
+<td>Nhiều phương thức <strong>cùng một class</strong></td>
+<td>Lớp con và lớp cha (<strong>hai class khác nhau</strong>)</td>
+</tr>
+<tr>
+<td>Chữ ký (tên + tham số)</td>
+<td><strong>Phải khác nhau</strong></td>
+<td><strong>Phải giống hệt nhau</strong></td>
+</tr>
+<tr>
+<td>Chọn phiên bản nào chạy</td>
+<td>Lúc biên dịch, dựa trên đối số truyền vào</td>
+<td>Lúc chạy, dựa trên <strong>object thực sự</strong> đang gọi (sẽ hiểu sâu ở Chương 17 — đa hình)</td>
+</tr>
+</tbody>
+</table>
+<h2>Bài tập</h2>
+<ol>
+<li>Tạo class <code>DongVat</code> với field <code>ten</code>, phương thức <code>keu()</code> in ra <code>&quot;...&quot;</code> (âm thanh chung chung).
+Tạo <code>Cho extends DongVat</code> và <code>Meo extends DongVat</code>, mỗi lớp override <code>keu()</code> in ra âm thanh riêng
+(&quot;Gau gau!&quot;, &quot;Meo meo!&quot;).</li>
+<li>Thêm vào <code>NhanVien</code> (code mẫu) một phương thức <code>thuong(double soTien)</code> cộng thêm tiền thưởng một
+lần vào <code>luongCoBan</code>; xác nhận <code>NhanVienBanHang</code> và <code>NhanVienQuanLy</code> đều dùng được phương thức
+này mà không cần viết lại.</li>
+<li>Thử xoá dòng <code>super(ten, luongCoBan);</code> trong <code>NhanVienBanHang</code>, biên dịch lại và đọc lỗi — giải
+thích vì sao lỗi xảy ra dựa trên phần &quot;super(...)&quot; ở trên.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Quên gọi <code>super(...)</code> khi lớp cha không có constructor không tham số</strong> — lỗi biên dịch
+<code>constructor NhanVien in class NhanVien cannot be applied to given types</code> hoặc tương tự. Luôn gọi
+<code>super(...)</code> tường minh với đúng tham số khi lớp cha không có constructor rỗng.</li>
+<li><strong>Sai chữ ký khi định tâm override, vô tình tạo ra overload</strong> — ví dụ viết
+<code>public double tinhLuong(int x)</code> (thêm tham số) thay vì <code>tinhLuong()</code> — đây không còn là override,
+mà là một phương thức hoàn toàn khác. Dùng <code>@Override</code> để trình biên dịch tự phát hiện lỗi này.</li>
+<li><strong>Field <code>private</code> ở lớp cha, lớp con tưởng dùng được trực tiếp</strong> — <code>private</code> không kế thừa xuống
+được, kể cả lớp con. Cần <code>protected</code> (hoặc getter/setter <code>public</code>) nếu lớp con cần truy cập trực
+tiếp.</li>
+<li><strong>Java không hỗ trợ đa kế thừa class</strong> (một class chỉ <code>extends</code> được <strong>đúng một</strong> class cha, khác
+với một số ngôn ngữ khác cho phép kế thừa nhiều class cùng lúc) — muốn &quot;kế thừa&quot; nhiều nguồn hành
+vi khác nhau, dùng <code>interface</code> (Chương 18) thay vì cố tìm cách kế thừa nhiều class.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch15-package-va-import.html">&larr; 15. Package & import</a><a class="nav-next" href="ch17-da-hinh.html">17. Đa hình (Polymorphism) &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

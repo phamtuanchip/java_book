@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 32 — Optional và xử lý null an toàn — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link active" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 32 — Optional và xử lý null an toàn</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Hiểu vấn đề <code>null</code> gây ra trong code Java, vì sao nó được gọi đùa là &quot;lỗi tỷ đô&quot;.</li>
+<li>Dùng <code>Optional&lt;T&gt;</code> để biểu diễn tường minh &quot;giá trị có thể không tồn tại&quot;.</li>
+<li>Dùng đúng các phương thức của <code>Optional</code>: <code>orElse</code>, <code>orElseGet</code>, <code>ifPresent</code>, <code>map</code>.</li>
+<li>Biết khi nào nên và không nên dùng <code>Optional</code>.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch32-optional/"><code>code/ch32-optional/</code></a>.</p>
+<h2>Vấn đề với <code>null</code></h2>
+<p>Từ Chương 13, bạn đã biết <code>null</code> là giá trị &quot;chưa trỏ tới object nào&quot; của kiểu tham chiếu, và
+<code>NullPointerException</code> là lỗi runtime cực kỳ phổ biến. Vấn đề cốt lõi: <strong>không có gì trong chữ ký
+phương thức cho biết giá trị trả về có thể là <code>null</code> hay không</strong>:</p>
+<pre class="hljs"><code><span class="hljs-type">String</span> <span class="hljs-variable">email</span> <span class="hljs-operator">=</span> diaChiEmail.get(<span class="hljs-string">&quot;chi&quot;</span>); <span class="hljs-comment">// co the la null, nhung KHONG CO GI bao truoc dieu do</span>
+System.out.println(email.length());     <span class="hljs-comment">// NullPointerException neu &quot;chi&quot; khong ton tai</span>
+</code></pre>
+<p>Người gọi <code>diaChiEmail.get(&quot;chi&quot;)</code> <strong>không có cách nào biết chắc</strong> (chỉ dựa vào chữ ký phương thức)
+liệu kết quả có thể <code>null</code> hay không — phải đọc tài liệu, hoặc đọc code cài đặt bên trong, hoặc đơn
+giản là <strong>quên kiểm tra</strong> và gặp lỗi lúc chạy. <code>Optional&lt;T&gt;</code> (Java 8+) giải quyết đúng vấn đề này.</p>
+<h2><code>Optional&lt;T&gt;</code> — biểu diễn tường minh &quot;có thể không có giá trị&quot;</h2>
+<pre class="hljs"><code><span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">optCoGiaTri</span> <span class="hljs-operator">=</span> Optional.of(<span class="hljs-string">&quot;gia tri co san&quot;</span>);     <span class="hljs-comment">// BAT BUOC khac null, nem loi ngay neu truyen null</span>
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">optRong</span> <span class="hljs-operator">=</span> Optional.empty();                       <span class="hljs-comment">// KHONG co gia tri</span>
+<span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">opt</span> <span class="hljs-operator">=</span> Optional.ofNullable(diaChiEmail.get(<span class="hljs-string">&quot;chi&quot;</span>)); <span class="hljs-comment">// AN TOAN du gia tri co the null</span>
+</code></pre>
+<ul>
+<li><code>Optional.of(giaTri)</code> — bọc một giá trị <strong>chắc chắn không <code>null</code></strong>; nếu bạn truyền <code>null</code> vào,
+nó <strong>chủ động ném <code>NullPointerException</code> ngay lập tức</strong> (thà lỗi sớm, rõ ràng, còn hơn để lỗi lan
+xa mới phát hiện).</li>
+<li><code>Optional.empty()</code> — biểu diễn tường minh &quot;không có giá trị gì&quot; (thay thế cho <code>null</code>).</li>
+<li><code>Optional.ofNullable(giaTriCoTheNull)</code> — cách dùng phổ biến nhất: tự động chuyển giá trị <code>null</code>
+thành <code>Optional.empty()</code>, giá trị không <code>null</code> thành <code>Optional.of(...)</code>.</li>
+</ul>
+<h2>Kiểm tra và lấy giá trị an toàn</h2>
+<pre class="hljs"><code>opt.isPresent();  <span class="hljs-comment">// co gia tri khong?</span>
+opt.isEmpty();    <span class="hljs-comment">// RONG khong? (nguoc lai voi isPresent, tu Java 11)</span>
+
+<span class="hljs-type">String</span> <span class="hljs-variable">ketQua</span> <span class="hljs-operator">=</span> opt.orElse(<span class="hljs-string">&quot;gia-tri-mac-dinh&quot;</span>); <span class="hljs-comment">// lay gia tri, hoac gia tri thay the neu rong</span>
+</code></pre>
+<p><code>orElse(giaTriMacDinh)</code> là cách an toàn để &quot;mở&quot; <code>Optional</code> ra lấy giá trị bên trong, luôn có kết
+quả cụ thể (không bao giờ <code>null</code>), không cần <code>if/else</code> kiểm tra <code>isPresent()</code> thủ công.</p>
+<h3><code>orElseGet()</code> — chỉ tính giá trị thay thế khi thực sự cần</h3>
+<pre class="hljs"><code><span class="hljs-type">String</span> <span class="hljs-variable">ketQua</span> <span class="hljs-operator">=</span> opt.orElseGet(() -&gt; taoGiaTriMacDinhTonKem());
+</code></pre>
+<p>Khác biệt với <code>orElse</code>: <code>orElseGet</code> nhận một <code>Supplier&lt;T&gt;</code> (Chương 30) — hàm này <strong>chỉ được gọi khi
+<code>Optional</code> thực sự rỗng</strong>. Với <code>orElse(giaTriMacDinh)</code>, biểu thức <code>giaTriMacDinh</code> <strong>luôn được tính
+toán trước</strong>, dù <code>Optional</code> có giá trị hay không (rồi bị bỏ đi nếu không cần dùng tới) — nếu việc
+tính giá trị mặc định đó tốn kém (gọi API, truy vấn database...), <code>orElseGet</code> hiệu quả hơn hẳn vì
+tránh được chi phí không cần thiết.</p>
+<h2>Thực hiện hành động có điều kiện</h2>
+<pre class="hljs"><code>opt.ifPresent(giaTri -&gt; System.out.println(<span class="hljs-string">&quot;Co gia tri: &quot;</span> + giaTri));
+
+opt.ifPresentOrElse(
+    giaTri -&gt; System.out.println(<span class="hljs-string">&quot;Co gia tri: &quot;</span> + giaTri),
+    () -&gt; System.out.println(<span class="hljs-string">&quot;Khong co gia tri nao&quot;</span>)
+);
+</code></pre>
+<p><code>ifPresent</code> (nhận một <code>Consumer&lt;T&gt;</code>, Chương 30) chỉ chạy hành động <strong>nếu có giá trị</strong>, thay thế cho:</p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (opt.isPresent()) {
+    System.out.println(<span class="hljs-string">&quot;Co gia tri: &quot;</span> + opt.get());
+}
+</code></pre>
+<p><code>ifPresentOrElse</code> (Java 9+) thêm nhánh xử lý cho trường hợp rỗng, tương đương <code>if/else</code> đầy đủ.</p>
+<h2><code>map()</code> — biến đổi giá trị bên trong <code>Optional</code></h2>
+<pre class="hljs"><code><span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-variable">optHoa</span> <span class="hljs-operator">=</span> opt.map(String::toUpperCase);
+</code></pre>
+<p>Nếu <code>opt</code> <strong>có</strong> giá trị, <code>map</code> áp dụng hàm biến đổi và trả về <code>Optional</code> chứa kết quả mới; nếu
+<code>opt</code> <strong>rỗng</strong>, <code>map</code> trả về <code>Optional.empty()</code> luôn, <strong>không</strong> gọi hàm biến đổi (tránh
+<code>NullPointerException</code> nếu hàm biến đổi không xử lý được <code>null</code>). Đây chính là ý tưởng tương tự
+<code>map</code> của Stream (Chương 31) — thực tế <code>Optional</code> có thể xem như &quot;một Stream chứa tối đa một phần
+tử&quot;.</p>
+<h2>Thiết kế phương thức trả về <code>Optional&lt;T&gt;</code> thay vì <code>T</code> (có nguy cơ <code>null</code>)</h2>
+<pre class="hljs"><code><span class="hljs-keyword">static</span> <span class="hljs-type">Optional</span>&lt;String&gt; <span class="hljs-title function_">timEmail</span><span class="hljs-params">(Map&lt;String, String&gt; danhBa, String ten)</span> {
+    <span class="hljs-keyword">return</span> Optional.ofNullable(danhBa.get(ten));
+}
+</code></pre>
+<p>Đây là cách dùng <code>Optional</code> <strong>quan trọng và phổ biến nhất</strong> trong thực tế: khi viết một phương
+thức mà kết quả <strong>có thể không tồn tại</strong>, khai báo kiểu trả về là <code>Optional&lt;T&gt;</code> thay vì <code>T</code>. Chữ
+ký phương thức tự nó đã &quot;nói rõ&quot;: <em>&quot;kết quả này có thể không có, bạn (người gọi) bắt buộc phải xử
+lý trường hợp đó&quot;</em> — người gọi <strong>không thể</strong> vô tình quên kiểm tra như với <code>null</code> (họ phải chủ
+động gọi <code>orElse</code>/<code>get()</code>/<code>ifPresent()</code>... để lấy giá trị ra, quá trình đó tự nhiên buộc họ đối mặt
+với khả năng rỗng).</p>
+<h2>Khi nào KHÔNG nên dùng <code>Optional</code></h2>
+<ul>
+<li><strong>Không dùng <code>Optional</code> làm kiểu của field trong class</strong> — <code>Optional</code> được thiết kế chủ yếu cho
+<strong>kiểu trả về của phương thức</strong>, không phải để lưu trữ trạng thái lâu dài; dùng làm field thường
+gây phức tạp không cần thiết (và không implements <code>Serializable</code> — sẽ gặp khi học Chương 36).</li>
+<li><strong>Không dùng <code>Optional</code> làm kiểu tham số phương thức</strong> — nếu một tham số có thể &quot;không có giá
+trị&quot;, cách thông thường hơn là dùng overload (Chương 10) cung cấp hai phiên bản phương thức, hoặc
+chấp nhận <code>null</code> với tài liệu rõ ràng, thay vì bắt người gọi phải bọc <code>Optional.of(...)</code> mỗi lần
+gọi.</li>
+<li><strong>Không gọi <code>.get()</code> trực tiếp mà không kiểm tra trước</strong> — <code>Optional.get()</code> (không có trong ví dụ
+ở trên, cố tình tránh dùng) ném <code>NoSuchElementException</code> nếu <code>Optional</code> rỗng — dùng trực tiếp
+<code>get()</code> mà không qua <code>isPresent()</code>/<code>orElse()</code> gần như tái tạo lại đúng vấn đề <code>null</code> mà
+<code>Optional</code> sinh ra để giải quyết.</li>
+</ul>
+<h2>Bài tập</h2>
+<ol>
+<li>Viết phương thức <code>Optional&lt;Integer&gt; timViTri(int[] mang, int giaTri)</code> trả về vị trí đầu tiên
+tìm thấy <code>giaTri</code> trong <code>mang</code> (dùng <code>Optional.empty()</code> nếu không tìm thấy), thay cho việc trả
+về <code>-1</code> như Chương 28.</li>
+<li>Dùng <code>orElseThrow(...)</code> (tự tra cứu tài liệu Java, không có trong ví dụ trên) để ném một
+exception tự định nghĩa (Chương 21) khi <code>Optional</code> rỗng, thay vì dùng giá trị mặc định.</li>
+<li>Viết một chuỗi <code>map()</code> liên tiếp trên <code>Optional&lt;String&gt;</code>: đầu tiên <code>trim()</code>, sau đó
+<code>toLowerCase()</code>, cuối cùng <code>orElse(&quot;khong-co&quot;)</code> — quan sát nếu <code>Optional</code> gốc rỗng, mọi bước
+<code>map</code> ở giữa đều tự động bị bỏ qua mà không cần kiểm tra thủ công ở từng bước.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Gọi <code>Optional.get()</code> mà không kiểm tra trước</strong> — tái tạo lại đúng vấn đề <code>NullPointerException</code>
+dưới một cái tên khác (<code>NoSuchElementException</code>). Luôn dùng <code>orElse</code>/<code>orElseGet</code>/<code>ifPresent</code>.</li>
+<li><strong>Dùng <code>Optional.of(giaTri)</code> khi <code>giaTri</code> có thể là <code>null</code></strong> — ném <code>NullPointerException</code> ngay
+tại đó. Dùng <code>Optional.ofNullable(...)</code> nếu không chắc chắn giá trị luôn khác <code>null</code>.</li>
+<li><strong>So sánh hai <code>Optional</code> bằng <code>==</code></strong> — giống mọi kiểu tham chiếu khác (Chương 11, 13), <code>==</code> so
+sánh tham chiếu, không so sánh nội dung; dùng <code>.equals()</code> nếu cần so sánh nội dung hai <code>Optional</code>.</li>
+<li><strong>Lạm dụng <code>Optional</code> ở khắp mọi nơi, kể cả khi giá trị chắc chắn không bao giờ rỗng</strong> — thêm độ
+phức tạp không cần thiết. Chỉ dùng <code>Optional</code> khi việc &quot;không có giá trị&quot; là một tình huống hợp
+lệ, có thật trong logic nghiệp vụ.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch31-stream-api.html">&larr; 31. Stream API</a><a class="nav-next" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

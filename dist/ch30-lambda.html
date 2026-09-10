@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 30 — Lambda expression & functional interface — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link active" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 30 — Lambda expression &amp; functional interface</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Hiểu <strong>functional interface</strong> là gì, viết được lambda expression thay thế anonymous class.</li>
+<li>Dùng thành thạo 5 functional interface có sẵn trong <code>java.util.function</code>.</li>
+<li>Dùng <strong>method reference</strong> — cách viết gọn hơn nữa cho một số trường hợp lambda phổ biến.</li>
+<li>Hiểu quy tắc &quot;effectively final&quot; khi lambda dùng biến từ phạm vi bên ngoài.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch30-lambda/"><code>code/ch30-lambda/</code></a>.</p>
+<h2>Từ anonymous class tới lambda</h2>
+<p>Nhắc lại Chương 19, tạo object implements interface &quot;ngay tại chỗ&quot;:</p>
+<pre class="hljs"><code><span class="hljs-type">PhepToan</span> <span class="hljs-variable">cong</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PhepToan</span>() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">apDung</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> {
+        <span class="hljs-keyword">return</span> a + b;
+    }
+};
+</code></pre>
+<p>Khi interface đó <strong>chỉ có đúng một phương thức abstract</strong> (gọi là <strong>functional interface</strong>), phần
+lớn đoạn code trên (<code>new PhepToan() { @Override public int apDung(...) { ... } }</code>) là <strong>thừa thãi
+về mặt hình thức</strong> — trình biên dịch thừa sức tự suy luận ra bạn đang implement phương thức nào.
+<strong>Lambda expression</strong> loại bỏ hoàn toàn phần thừa đó:</p>
+<pre class="hljs"><code><span class="hljs-type">PhepToan</span> <span class="hljs-variable">cong</span> <span class="hljs-operator">=</span> (a, b) -&gt; a + b;
+</code></pre>
+<p>Đọc là: &quot;nhận vào <code>a, b</code>, trả về <code>a + b</code>&quot;. Cú pháp: <code>(tham số) -&gt; biểu thức_hoặc_khối_lệnh</code>.</p>
+<pre class="hljs"><code><span class="hljs-meta">@FunctionalInterface</span>
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">PhepToan</span> {
+    <span class="hljs-type">int</span> <span class="hljs-title function_">apDung</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;
+}
+</code></pre>
+<p><code>@FunctionalInterface</code> là annotation <strong>tuỳ chọn nhưng nên dùng</strong> — báo cho trình biên dịch biết
+&quot;interface này được thiết kế để dùng với lambda&quot;; nếu ai đó vô tình thêm phương thức abstract thứ
+hai vào interface (phá vỡ điều kiện &quot;chỉ đúng một phương thức abstract&quot;), trình biên dịch <strong>báo lỗi
+ngay</strong> thay vì để lỗi âm thầm lan rộng ra mọi chỗ đang dùng lambda với interface đó.</p>
+<h3>Lambda nhiều dòng</h3>
+<pre class="hljs"><code><span class="hljs-type">PhepToan</span> <span class="hljs-variable">congCoLog</span> <span class="hljs-operator">=</span> (a, b) -&gt; {
+    System.out.println(<span class="hljs-string">&quot;Dang cong &quot;</span> + a + <span class="hljs-string">&quot; va &quot;</span> + b);
+    <span class="hljs-keyword">return</span> a + b;
+};
+</code></pre>
+<p>Khi thân lambda có <strong>nhiều hơn một câu lệnh</strong>, cần dấu ngoặc nhọn <code>{ }</code> và <code>return</code> tường minh
+(giống thân một phương thức bình thường) — khác với lambda một dòng (<code>(a, b) -&gt; a + b</code>), nơi giá
+trị của biểu thức <strong>tự động</strong> là giá trị trả về, không cần viết <code>return</code>.</p>
+<h2>Quy tắc &quot;effectively final&quot;</h2>
+<pre class="hljs"><code><span class="hljs-type">int</span> <span class="hljs-variable">heSo</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;
+<span class="hljs-type">PhepToan</span> <span class="hljs-variable">nhanHeSo</span> <span class="hljs-operator">=</span> (a, b) -&gt; (a + b) * heSo;
+</code></pre>
+<p>Lambda <strong>dùng được</strong> biến cục bộ từ phạm vi bao quanh nó (<code>heSo</code>), nhưng với điều kiện: biến đó
+phải là <strong>effectively final</strong> — nghĩa là, dù không bắt buộc ghi từ khoá <code>final</code>, biến đó <strong>không
+được gán lại giá trị</strong> ở bất kỳ đâu sau khi khai bao, trong toàn bộ phạm vi chứa nó. Nếu bạn gán lại
+<code>heSo = 200;</code> ở bất kỳ đâu sau đó, trình biên dịch báo lỗi ngay tại <strong>lambda</strong> đang dùng <code>heSo</code>,
+dù dòng gán lại nằm ở chỗ khác. Lý do kỹ thuật: lambda có thể được lưu trữ và gọi <strong>muộn hơn nhiều</strong>
+so với chỗ nó được tạo ra (thậm chí sau khi phương thức chứa nó đã kết thúc chạy) — Java đảm bảo an
+toàn bằng cách <strong>chỉ cho lambda &quot;chụp ảnh&quot; giá trị tại thời điểm tạo</strong>, không cho phép giá trị đó
+thay đổi sau này để tránh mơ hồ.</p>
+<h2><code>java.util.function</code> — các functional interface có sẵn</h2>
+<p>Phần lớn trường hợp dùng lambda trong thực tế <strong>không cần tự định nghĩa interface riêng</strong> như
+<code>PhepToan</code> — thư viện chuẩn đã cung cấp sẵn các functional interface tổng quát trong package
+<code>java.util.function</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Chữ ký</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Predicate&lt;T&gt;</code></td>
+<td><code>boolean test(T t)</code></td>
+<td>Kiểm tra điều kiện, trả về đúng/sai</td>
+</tr>
+<tr>
+<td><code>Function&lt;T, R&gt;</code></td>
+<td><code>R apply(T t)</code></td>
+<td>Nhận vào kiểu <code>T</code>, trả về kiểu <code>R</code> (khác kiểu)</td>
+</tr>
+<tr>
+<td><code>Consumer&lt;T&gt;</code></td>
+<td><code>void accept(T t)</code></td>
+<td>Nhận vào, thực hiện hành động, không trả về gì</td>
+</tr>
+<tr>
+<td><code>Supplier&lt;T&gt;</code></td>
+<td><code>T get()</code></td>
+<td>Không nhận gì, tạo/trả về một giá trị</td>
+</tr>
+<tr>
+<td><code>BiFunction&lt;T, U, R&gt;</code></td>
+<td><code>R apply(T t, U u)</code></td>
+<td>Giống <code>Function</code> nhưng nhận <strong>hai</strong> tham số</td>
+</tr>
+</tbody>
+</table>
+<pre class="hljs"><code><span class="hljs-type">Predicate</span>&lt;Integer&gt; <span class="hljs-variable">laSoChan</span> <span class="hljs-operator">=</span> n -&gt; n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>;
+<span class="hljs-type">Function</span>&lt;String, Integer&gt; <span class="hljs-variable">doDaiChuoi</span> <span class="hljs-operator">=</span> s -&gt; s.length();
+<span class="hljs-type">Consumer</span>&lt;String&gt; <span class="hljs-variable">inHoaToanBo</span> <span class="hljs-operator">=</span> s -&gt; System.out.println(s.toUpperCase());
+<span class="hljs-type">Supplier</span>&lt;String&gt; <span class="hljs-variable">taoChaoMung</span> <span class="hljs-operator">=</span> () -&gt; <span class="hljs-string">&quot;Chao mung!&quot;</span>;
+<span class="hljs-type">BiFunction</span>&lt;Integer, Integer, Integer&gt; <span class="hljs-variable">congHaiSo</span> <span class="hljs-operator">=</span> (a, b) -&gt; a + b;
+</code></pre>
+<p>Bạn đã <strong>thực chất dùng qua</strong> một functional interface có sẵn từ Chương 27:
+<code>Comparator&lt;T&gt;</code> — có đúng một phương thức abstract (<code>compare</code>), nên <code>Comparator.comparing(...)</code>
+nhận được lambda/method reference thay vì phải viết anonymous class dài dòng.</p>
+<h2>Method reference — gọn hơn nữa</h2>
+<p>Khi thân lambda chỉ đơn giản là <strong>gọi lại một phương thức đã tồn tại sẵn</strong>, có thể viết gọn hơn
+bằng method reference, cú pháp <code>Kiểu::tenPhuongThuc</code>:</p>
+<pre class="hljs"><code><span class="hljs-comment">// Loai 1: tham chieu phuong thuc STATIC</span>
+<span class="hljs-type">BiFunction</span>&lt;Integer, Integer, Integer&gt; <span class="hljs-variable">cong</span> <span class="hljs-operator">=</span> Integer::sum;      <span class="hljs-comment">// thay cho (a, b) -&gt; Integer.sum(a, b)</span>
+
+<span class="hljs-comment">// Loai 2: tham chieu phuong thuc INSTANCE cua MOT object cu the</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">ten</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Xin chao&quot;</span>;
+<span class="hljs-type">Supplier</span>&lt;String&gt; <span class="hljs-variable">layHoa</span> <span class="hljs-operator">=</span> ten::toUpperCase;                     <span class="hljs-comment">// thay cho () -&gt; ten.toUpperCase()</span>
+
+<span class="hljs-comment">// Loai 3: tham chieu phuong thuc INSTANCE, ap dung TREN THAM SO duoc truyen vao</span>
+<span class="hljs-type">Function</span>&lt;String, Integer&gt; <span class="hljs-variable">layDoDai</span> <span class="hljs-operator">=</span> String::length;            <span class="hljs-comment">// thay cho s -&gt; s.length()</span>
+
+<span class="hljs-comment">// Loai 4: tham chieu CONSTRUCTOR</span>
+<span class="hljs-type">Supplier</span>&lt;List&lt;Integer&gt;&gt; <span class="hljs-variable">taoMoi</span> <span class="hljs-operator">=</span> ArrayList::<span class="hljs-keyword">new</span>;                 <span class="hljs-comment">// thay cho () -&gt; new ArrayList&lt;&gt;()</span>
+</code></pre>
+<p>Method reference <strong>không phải cú pháp mới về bản chất</strong> — nó chỉ là cách viết tắt cho một dạng
+lambda rất phổ biến (lambda mà thân của nó chỉ gọi đúng một phương thức có sẵn, không thêm logic
+gì khác). Dùng khi nó làm code <strong>rõ ràng hơn</strong>; nếu lambda cần thêm logic (dù chỉ một chút), viết
+lambda tường minh vẫn thường dễ đọc hơn ép dùng method reference.</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Viết lại <code>PhepToan</code> để có thêm phiên bản <code>chia</code> bằng lambda, xử lý (in cảnh báo, trả về <code>0</code>)
+khi chia cho 0 thay vì để <code>ArithmeticException</code> (Chương 21) xảy ra.</li>
+<li>Dùng <code>Predicate&lt;String&gt;</code> kiểm tra một chuỗi có phải palindrome hay không (tận dụng lại logic đã
+viết ở bài tập Chương 11), áp dụng nó để lọc một <code>List&lt;String&gt;</code> (dùng vòng lặp với <code>test(...)</code>,
+chưa cần Stream — sẽ học cách lọc gọn hơn nhiều ở Chương 31).</li>
+<li>Viết 3 method reference khác nhau cho cùng một <code>Function&lt;String, String&gt;</code>: một tham chiếu tới
+<code>String::toUpperCase</code>, một tới <code>String::trim</code>, thử áp dụng lần lượt và so sánh kết quả.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Cố dùng lambda cho interface có từ 2 phương thức abstract trở lên</strong> — lỗi biên dịch, vì trình
+biên dịch không biết lambda tương ứng với phương thức nào. Chỉ functional interface (đúng một
+phương thức abstract) mới dùng được lambda.</li>
+<li><strong>Gán lại giá trị biến ngoài sau khi đã dùng trong lambda</strong> — vi phạm &quot;effectively final&quot;, lỗi
+biên dịch tại chính lambda. Nếu cần một giá trị &quot;thay đổi được&quot; mà lambda vẫn thấy, cần dùng cấu
+trúc khác (ví dụ một mảng một phần tử, hoặc field của object) — kỹ thuật nâng cao, ít cần tới ở
+giai đoạn học này.</li>
+<li><strong>Quên <code>return</code> trong lambda nhiều dòng</strong> — khác với lambda một dòng (tự động trả về giá trị biểu
+thức), lambda dùng <code>{ }</code> <strong>bắt buộc</strong> <code>return</code> tường minh nếu functional interface yêu cầu trả về
+giá trị.</li>
+<li><strong>Method reference không khớp chữ ký functional interface mong đợi</strong> — ví dụ cố dùng
+<code>String::length</code> (nhận 0 tham số ngoài chính <code>this</code>, trả <code>int</code>) cho một <code>BiFunction</code> (mong đợi
+nhận 2 tham số) — lỗi biên dịch báo rõ không khớp kiểu, đọc kỹ thông báo lỗi để đối chiếu đúng
+loại method reference (1 trong 4 loại đã học) phù hợp với ngữ cảnh.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch29-thuat-toan-duyet-do-thi.html">&larr; 29. Duyệt đồ thị/cây: BFS & DFS</a><a class="nav-next" href="ch31-stream-api.html">31. Stream API &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

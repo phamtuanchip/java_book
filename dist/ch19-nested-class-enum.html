@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 19 — Lớp lồng, anonymous class, enum nâng cao — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link active" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 19 — Lớp lồng, anonymous class, enum nâng cao</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Viết được <strong>inner class</strong> (lớp lồng không static) và <strong>static nested class</strong>, hiểu khác biệt.</li>
+<li>Dùng <strong>anonymous class</strong> để tạo object implements interface &quot;ngay tại chỗ&quot;, không cần đặt tên
+class riêng.</li>
+<li>Viết enum có field, constructor, phương thức riêng — vượt xa enum &quot;danh sách tên suông&quot; bạn có
+thể đã gặp ở nơi khác.</li>
+<li>Viết enum với phương thức khác nhau cho từng hằng số (constant-specific class body).</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch19-nested-enum/"><code>code/ch19-nested-enum/</code></a>.</p>
+<h2>Lớp lồng (nested class) là gì?</h2>
+<p>Java cho phép khai báo một class <strong>bên trong</strong> một class khác, khi class đó <strong>chỉ có ý nghĩa gắn
+liền</strong> với class chứa nó — không cần tồn tại độc lập bên ngoài. Có hai loại chính:</p>
+<h3>Static nested class — độc lập, chỉ &quot;đóng gói&quot; cho gọn</h3>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DoiBongDa</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThongKe</span> {
+        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> tongSoTran;
+        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> tongBanThang;
+
+        <span class="hljs-type">public</span> <span class="hljs-title function_">ThongKe</span><span class="hljs-params">(<span class="hljs-type">int</span> tongSoTran, <span class="hljs-type">int</span> tongBanThang)</span> {
+            <span class="hljs-built_in">this</span>.tongSoTran = tongSoTran;
+            <span class="hljs-built_in">this</span>.tongBanThang = tongBanThang;
+        }
+    }
+}
+</code></pre>
+<p><code>static class ThongKe</code> hoạt động gần như một class bình thường, độc lập hoàn toàn với bất kỳ object
+<code>DoiBongDa</code> nào — chỉ khác là tên đầy đủ của nó là <code>DoiBongDa.ThongKe</code>, và bạn khai báo nó bên trong
+<code>DoiBongDa</code> đơn thuần vì nó <strong>có ý nghĩa liên quan chặt</strong> tới <code>DoiBongDa</code> (thống kê của một đội
+bóng), giúp code dễ tìm và tổ chức hơn. Tạo object: <code>new DoiBongDa.ThongKe(10, 18)</code>.</p>
+<h3>Inner class (không static) — luôn gắn liền một object outer cụ thể</h3>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DoiBongDa</span> {
+    <span class="hljs-keyword">private</span> String tenDoi;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CauThu</span> {
+        <span class="hljs-keyword">private</span> String ten;
+
+        <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">gioiThieu</span><span class="hljs-params">()</span> {
+            System.out.println(ten + <span class="hljs-string">&quot; - doi &quot;</span> + tenDoi); <span class="hljs-comment">// truy cap TRUC TIEP field outer</span>
+        }
+    }
+}
+</code></pre>
+<p>Khác với static nested class, <strong>inner class luôn gắn liền với một object cụ thể</strong> của class ngoài
+(gọi là &quot;outer instance&quot;) — bên trong <code>CauThu</code>, bạn dùng được trực tiếp field <code>tenDoi</code> của
+<code>DoiBongDa</code>, dù không truyền nó vào constructor <code>CauThu</code> — Java tự &quot;nhớ&quot; <code>CauThu</code> này thuộc về
+object <code>DoiBongDa</code> nào. Muốn tạo inner class <strong>từ bên ngoài</strong> class chứa nó, cú pháp cần một object
+outer đứng trước:</p>
+<pre class="hljs"><code><span class="hljs-type">DoiBongDa</span> <span class="hljs-variable">doi</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DoiBongDa</span>(<span class="hljs-string">&quot;FC Java&quot;</span>);
+DoiBongDa.<span class="hljs-type">CauThu</span> <span class="hljs-variable">ct</span> <span class="hljs-operator">=</span> doi.<span class="hljs-keyword">new</span> <span class="hljs-title class_">CauThu</span>(<span class="hljs-string">&quot;Le Van C&quot;</span>, <span class="hljs-number">9</span>); <span class="hljs-comment">// outerObject.new InnerClass(...)</span>
+</code></pre>
+<p><strong>Khi nào dùng loại nào?</strong> Nếu class lồng cần truy cập dữ liệu của outer instance và luôn &quot;thuộc
+về&quot; một outer cụ thể (như <code>CauThu</code> luôn thuộc về một <code>DoiBongDa</code>), dùng inner class. Nếu class lồng
+không cần gì từ outer instance, chỉ đơn thuần liên quan chủ đề, dùng static nested class — đây là
+lựa chọn phổ biến hơn trong thực tế vì đơn giản hơn.</p>
+<h2>Anonymous class — tạo object &quot;ngay tại chỗ&quot;</h2>
+<pre class="hljs"><code><span class="hljs-type">HanhDong</span> <span class="hljs-variable">chao</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HanhDong</span>() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">thucHien</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Xin chao tu anonymous class!&quot;</span>);
+    }
+};
+chao.thucHien();
+</code></pre>
+<p><strong>Anonymous class</strong> (lớp vô danh) tạo ra <strong>một object duy nhất</strong> implements một interface (hoặc
+kế thừa một class) <strong>ngay tại nơi khai báo</strong>, không cần đặt tên class riêng ở đâu khác. Cú pháp:
+<code>new &lt;Interface hoặc Class&gt;() { &lt;phần thân override&gt; }</code>.</p>
+<p>Dùng phổ biến nhất khi bạn cần một hành vi <strong>chỉ dùng đúng một lần</strong>, không đáng để tạo hẳn một
+class riêng có tên:</p>
+<pre class="hljs"><code><span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">thucHienHanhDong</span><span class="hljs-params">(HanhDong hd)</span> {
+    hd.thucHien();
+}
+
+<span class="hljs-comment">// goi truc tiep voi mot anonymous class lam doi so:</span>
+thucHienHanhDong(<span class="hljs-keyword">new</span> <span class="hljs-title class_">HanhDong</span>() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">thucHien</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Hanh dong duoc truyen truc tiep vao tham so!&quot;</span>);
+    }
+});
+</code></pre>
+<p><strong>Ghi chú hướng tới sau này</strong>: từ Chương 30, bạn sẽ học <strong>lambda expression</strong> — cú pháp Java hiện
+đại hơn nhiều để thay thế phần lớn trường hợp dùng anonymous class implements interface chỉ có
+<strong>một phương thức</strong> (như <code>HanhDong</code> ở đây). Chương này dạy anonymous class trước vì (1) nó vẫn xuất
+hiện rất nhiều trong code Java hiện có, và (2) hiểu anonymous class giúp lambda ở Chương 30 trở nên
+dễ hiểu hơn nhiều (lambda gần như chỉ là &quot;anonymous class viết gọn hơn&quot; cho đúng một trường hợp
+riêng).</p>
+<h2>Enum nâng cao: field, constructor, phương thức riêng</h2>
+<p>Bạn có thể đã thấy enum dạng đơn giản (<code>enum NgayTrongTuan { THU_HAI, THU_BA, ... }</code>). Enum trong
+Java thực chất <strong>mạnh hơn nhiều</strong> — về bản chất, mỗi hằng số enum <strong>là một object</strong>, và bản thân
+<code>enum</code> là một dạng class đặc biệt, có thể có field, constructor, phương thức như class bình thường:</p>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">HanhTinh</span> {
+    TRAI_DAT(<span class="hljs-number">5.976e24</span>, <span class="hljs-number">6.37814e6</span>),
+    SAO_HOA(<span class="hljs-number">6.421e23</span>, <span class="hljs-number">3.3972e6</span>),
+    SAO_MOC(<span class="hljs-number">1.9e27</span>, <span class="hljs-number">7.1492e7</span>);
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">double</span> khoiLuong;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">double</span> banKinh;
+
+    HanhTinh(<span class="hljs-type">double</span> khoiLuong, <span class="hljs-type">double</span> banKinh) {
+        <span class="hljs-built_in">this</span>.khoiLuong = khoiLuong;
+        <span class="hljs-built_in">this</span>.banKinh = banKinh;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">tinhTrongLuongBeMat</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">6.673E-11</span> * khoiLuong / (banKinh * banKinh);
+    }
+}
+</code></pre>
+<p>Mỗi hằng số (<code>TRAI_DAT</code>, <code>SAO_HOA</code>...) tự gọi <strong>constructor tương ứng đúng một lần</strong> khi enum được
+nạp. Constructor của enum <strong>luôn ngầm định <code>private</code></strong> — không có cách nào tự <code>new HanhTinh(...)</code>
+từ bên ngoài; danh sách hằng số khai báo sẵn chính là <strong>toàn bộ</strong> các object của enum này tồn tại
+trong suốt chương trình.</p>
+<p>Gọi phương thức: <code>HanhTinh.TRAI_DAT.tinhTrongLuongBeMat()</code>. Duyệt qua mọi hằng số bằng
+<code>HanhTinh.values()</code> (trả về mảng chứa tất cả hằng số, theo đúng thứ tự khai báo).</p>
+<h3>Enum với phương thức riêng cho từng hằng số (constant-specific class body)</h3>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">PhuongThucThanhToan</span> {
+    TIEN_MAT {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">xuLy</span><span class="hljs-params">(<span class="hljs-type">double</span> soTien)</span> {
+            System.out.println(<span class="hljs-string">&quot;Nhan &quot;</span> + soTien + <span class="hljs-string">&quot; tien mat.&quot;</span>);
+        }
+    },
+    THE_TIN_DUNG {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">xuLy</span><span class="hljs-params">(<span class="hljs-type">double</span> soTien)</span> {
+            <span class="hljs-type">double</span> <span class="hljs-variable">phi</span> <span class="hljs-operator">=</span> soTien * <span class="hljs-number">0.02</span>;
+            System.out.println(<span class="hljs-string">&quot;Tru the &quot;</span> + (soTien + phi));
+        }
+    };
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-type">void</span> <span class="hljs-title function_">xuLy</span><span class="hljs-params">(<span class="hljs-type">double</span> soTien)</span>;
+}
+</code></pre>
+<p>Khi mỗi hằng số cần <strong>hành vi hoàn toàn khác nhau</strong> cho cùng một phương thức, thay vì viết một
+phương thức chung chứa <code>if/else</code>/<code>switch</code> dài dằng dặc kiểm tra &quot;hằng số nào đang gọi&quot;, mỗi hằng số
+tự cung cấp <strong>thân hàm riêng</strong> ngay sau tên nó. Đây là một cách dùng enum khá nâng cao nhưng rất phổ
+biến trong code thực tế — bạn sẽ nhận ra nó là một dạng cụ thể của <strong>đa hình</strong> (Chương 17) áp dụng
+cho enum: gọi <code>PhuongThucThanhToan.TIEN_MAT.xuLy(...)</code> và <code>THE_TIN_DUNG.xuLy(...)</code> giống hệt cách
+gọi, nhưng mỗi hằng số tự chạy đúng logic riêng.</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Thêm static nested class <code>DoiBongDa.HuanLuyenVien</code> với field <code>ten</code>, <code>soNamKinhNghiem</code>.</li>
+<li>Viết enum <code>MucDoUuTien</code> gồm <code>THAP</code>, <code>TRUNG_BINH</code>, <code>CAO</code>, mỗi hằng số có field <code>heSoCanhBao</code>
+(int), phương thức <code>hienThiCanhBao()</code> in ra thông báo khác nhau tuỳ mức độ.</li>
+<li>Viết một anonymous class implements <code>Comparator</code>-giống-tự-định-nghĩa (tạo interface riêng
+<code>SoSanh { int soSanh(int a, int b); }</code>), truyền vào một phương thức nhận tham số kiểu đó để sắp
+xếp một mảng <code>int[]</code> theo thứ tự giảm dần (gợi ý: viết thuật toán sắp xếp đơn giản như
+bubble sort, gọi <code>soSanh</code> để quyết định thứ tự thay vì so sánh <code>&lt;</code>/<code>&gt;</code> trực tiếp).</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Cố <code>new InnerClass(...)</code> trực tiếp mà không qua object outer</strong> — inner class (không static)
+<strong>luôn</strong> cần một outer instance đứng trước: <code>outerObject.new InnerClass(...)</code>, hoặc tạo từ bên
+trong chính outer class như code mẫu.</li>
+<li><strong>Dùng inner class khi không thực sự cần truy cập dữ liệu outer</strong> — gây phức tạp không cần thiết
+(bắt buộc phải có outer instance mới tạo được). Nếu class lồng không cần gì từ outer, dùng
+<code>static class</code> sẽ đơn giản hơn.</li>
+<li><strong>Cố gọi <code>new PhuongThucThanhToan(...)</code></strong> — enum không bao giờ <code>new</code> được từ bên ngoài, kể cả khi
+có constructor với tham số. Danh sách hằng số khai báo sẵn là cách duy nhất có object của enum đó.</li>
+<li><strong>Quên <code>abstract</code> cho phương thức chung khi dùng constant-specific class body</strong> — nếu enum có
+phương thức mà <strong>mọi</strong> hằng số phải tự override riêng (như <code>xuLy</code> ở trên), phương thức đó phải
+khai báo <code>abstract</code> trong thân enum, nếu không trình biên dịch không bắt buộc từng hằng số phải
+cung cấp thân hàm riêng.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch18-abstract-va-interface.html">&larr; 18. Abstract class & Interface</a><a class="nav-next" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

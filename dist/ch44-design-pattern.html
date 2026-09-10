@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 44 — Design pattern cơ bản — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link active" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 44 — Design pattern cơ bản</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Hiểu design pattern là gì — không phải &quot;luật bắt buộc&quot;, mà là <strong>giải pháp đã được đúc kết</strong> cho
+các vấn đề thiết kế lặp đi lặp lại.</li>
+<li>Nhận diện và cài đặt được 4 pattern cơ bản, phổ biến nhất: Singleton, Factory, Strategy, Observer.</li>
+<li>Biết khi nào <strong>nên</strong> và <strong>không nên</strong> dùng mỗi pattern — tránh áp dụng máy móc.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch44-design-pattern/"><code>code/ch44-design-pattern/</code></a>.</p>
+<h2>Design pattern là gì?</h2>
+<p>Qua nhiều thập kỷ, cộng đồng lập trình nhận ra một số <strong>vấn đề thiết kế lặp đi lặp lại</strong> trong rất
+nhiều dự án khác nhau, và đúc kết ra các <strong>giải pháp chung</strong> đã được kiểm chứng — gọi là <strong>design
+pattern</strong> (mẫu thiết kế). Đây <strong>không phải</strong> đoạn code sao chép dán được, mà là <strong>ý tưởng cấu trúc</strong>
+bạn tự áp dụng vào tình huống cụ thể của mình. Biết design pattern giúp bạn: (1) giải quyết vấn đề
+nhanh hơn (không phải &quot;phát minh lại bánh xe&quot;), và (2) <strong>giao tiếp hiệu quả hơn</strong> với lập trình
+viên khác — nói &quot;dùng Observer ở đây&quot; truyền đạt được rất nhiều ý nghĩa chỉ trong một từ.</p>
+<h2>Singleton — đảm bảo chỉ có một instance</h2>
+<pre class="hljs"><code><span class="hljs-keyword">class</span> <span class="hljs-title class_">CauHinhUngDung</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">CauHinhUngDung</span> <span class="hljs-variable">INSTANCE</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CauHinhUngDung</span>();
+
+    <span class="hljs-type">private</span> <span class="hljs-title function_">CauHinhUngDung</span><span class="hljs-params">()</span> { <span class="hljs-comment">/* ... */</span> } <span class="hljs-comment">// constructor PRIVATE</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">CauHinhUngDung</span> <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> INSTANCE;
+    }
+}
+</code></pre>
+<p>Dùng khi bạn cần <strong>đảm bảo chỉ có đúng một</strong> object của một class tồn tại trong suốt vòng đời
+chương trình — ví dụ cấu hình ứng dụng, kết nối tới một tài nguyên chia sẻ duy nhất. Cách cài đặt
+trên (tạo <code>INSTANCE</code> sẵn khi class được nạp) an toàn với đa luồng (Chương 38) mà <strong>không cần</strong>
+<code>synchronized</code>, vì JVM tự đảm bảo việc nạp class (và khởi tạo field <code>static final</code>) chỉ xảy ra một
+lần, thread-safe theo đặc tả ngôn ngữ.</p>
+<p><strong>Cẩn trọng khi dùng</strong>: Singleton dễ bị <strong>lạm dụng</strong> thành &quot;biến toàn cục&quot; (global state) — nhiều
+Singleton trong một hệ thống lớn có thể khiến code các phần khác nhau <strong>ngầm phụ thuộc</strong> vào nhau
+qua trạng thái chia sẻ, khó kiểm thử (Chương 41 — vì mỗi test không dễ có một <code>CauHinhUngDung</code>
+&quot;sạch&quot; riêng) và khó suy luận. Chỉ dùng khi thực sự có <strong>đúng một</strong> thứ như vậy trong bản chất bài
+toán, không dùng chỉ vì &quot;tiện truy cập từ mọi nơi&quot;.</p>
+<h2>Factory — gom logic tạo object</h2>
+<pre class="hljs"><code><span class="hljs-keyword">class</span> <span class="hljs-title class_">ThongBaoFactory</span> {
+    <span class="hljs-keyword">static</span> <span class="hljs-type">ThongBao</span> <span class="hljs-title function_">tao</span><span class="hljs-params">(String loai)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">switch</span> (loai) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;email&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThongBaoEmail</span>();
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;sms&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThongBaoSms</span>();
+            <span class="hljs-keyword">default</span> -&gt; <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>(<span class="hljs-string">&quot;Loai khong ho tro: &quot;</span> + loai);
+        };
+    }
+}
+</code></pre>
+<p>Dùng khi việc <strong>quyết định tạo object loại cụ thể nào</strong> khá phức tạp, hoặc có thể tạo bằng nhiều
+cách/nhiều loại con — thay vì rải <code>new ThongBaoEmail()</code>/<code>new ThongBaoSms()</code> khắp nơi trong code gọi
+(khiến mọi nơi gọi đều phải biết hết các lớp con cụ thể tồn tại), gom logic đó vào <strong>một chỗ</strong>. Nếu
+sau này thêm loại thông báo mới, chỉ cần sửa <strong>đúng một chỗ</strong> (bên trong Factory), mọi nơi gọi
+<code>ThongBaoFactory.tao(...)</code> không cần sửa gì.</p>
+<h2>Strategy — hoán đổi thuật toán lúc chạy</h2>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> <span class="hljs-title class_">ChienLuocGiamGia</span> {
+    <span class="hljs-type">double</span> <span class="hljs-title function_">apDung</span><span class="hljs-params">(<span class="hljs-type">double</span> giaGoc)</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">DonHang</span> {
+    <span class="hljs-keyword">private</span> ChienLuocGiamGia chienLuoc;
+
+    <span class="hljs-type">double</span> <span class="hljs-title function_">tinhGiaCuoiCung</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> chienLuoc.apDung(giaGoc);
+    }
+}
+</code></pre>
+<p>Dùng khi có <strong>nhiều cách</strong> thực hiện cùng một việc (ở đây: tính giá sau giảm giá), và bạn muốn
+<strong>chọn/đổi</strong> cách thực hiện <strong>lúc chạy</strong>, không cố định lúc viết code. So với viết một khối
+<code>if/else</code>/<code>switch</code> dài liệt kê mọi loại giảm giá ngay trong <code>DonHang</code> (khiến <code>DonHang</code> phải &quot;biết&quot;
+về mọi loại chiến lược, và phải sửa <code>DonHang</code> mỗi khi thêm loại mới), Strategy tách mỗi cách xử lý
+thành một class riêng implements chung một interface — <code>DonHang</code> chỉ cần biết &quot;có một
+<code>ChienLuocGiamGia</code> nào đó&quot;, không cần biết là loại nào cụ thể (đây chính là <strong>đa hình</strong>, Chương 17,
+áp dụng vào một tình huống thiết kế cụ thể).</p>
+<p>Với chiến lược đơn giản (một dòng logic), dùng thẳng <strong>lambda</strong> (Chương 30) thay vì tạo hẳn một
+class riêng — như minh hoạ ở cuối <code>StrategyDemo.java</code> (<code>gia -&gt; gia * 0.5</code>).</p>
+<h2>Observer — thông báo tự động khi trạng thái thay đổi</h2>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> <span class="hljs-title class_">NguoiQuanSat</span> {
+    <span class="hljs-type">void</span> <span class="hljs-title function_">nhanThongBao</span><span class="hljs-params">(<span class="hljs-type">double</span> giaMoi)</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CoPhieu</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-type">List</span>&lt;NguoiQuanSat&gt; <span class="hljs-variable">danhSachQuanSat</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+
+    <span class="hljs-type">void</span> <span class="hljs-title function_">dangKy</span><span class="hljs-params">(NguoiQuanSat nqs)</span> {
+        danhSachQuanSat.add(nqs);
+    }
+
+    <span class="hljs-type">void</span> <span class="hljs-title function_">capNhatGia</span><span class="hljs-params">(<span class="hljs-type">double</span> giaMoi)</span> {
+        <span class="hljs-built_in">this</span>.gia = giaMoi;
+        <span class="hljs-keyword">for</span> (NguoiQuanSat nqs : danhSachQuanSat) {
+            nqs.nhanThongBao(giaMoi);
+        }
+    }
+}
+</code></pre>
+<p>Dùng khi một object (<strong>subject</strong>, ở đây là <code>CoPhieu</code>) cần <strong>thông báo</strong> cho một số lượng <strong>không cố
+định, có thể thay đổi</strong> các object khác (<strong>observer</strong>) mỗi khi trạng thái của nó thay đổi — mà
+<code>CoPhieu</code> <strong>không cần biết trước</strong> (lúc viết code) sẽ có bao nhiêu, hay những loại <code>NguoiQuanSat</code> cụ
+thể nào sẽ đăng ký theo dõi nó. Đăng ký (<code>dangKy</code>) và huỷ đăng ký (<code>huyDangKy</code>) có thể thực hiện
+<strong>bất kỳ lúc nào</strong> trong lúc chương trình chạy.</p>
+<p>Pattern này là nền tảng của rất nhiều hệ thống lớn hơn: xử lý sự kiện giao diện người dùng (nhấn
+nút → thông báo cho các &quot;listener&quot; đã đăng ký), hệ thống pub/sub trong kiến trúc phân tán.</p>
+<h2>Nguyên tắc quan trọng nhất: không lạm dụng pattern</h2>
+<p>Đây là điều cần khắc sâu hơn cả 4 pattern cụ thể: <strong>design pattern là công cụ giải quyết vấn đề cụ
+thể, không phải mục tiêu để &quot;chứng tỏ&quot; bạn biết pattern</strong>. Áp dụng pattern khi bài toán <strong>thực sự
+có</strong> đặc điểm phù hợp (nhiều cách xử lý cần hoán đổi → Strategy; nhiều observer không xác định
+trước → Observer...) — cố nhét pattern vào bài toán đơn giản không cần tới nó chỉ làm code <strong>phức
+tạp hơn</strong> một cách không cần thiết, vi phạm trực tiếp nguyên tắc &quot;giữ thiết kế đơn giản nhất có thể
+cho vấn đề đang giải quyết&quot; mà chính các pattern này hướng tới phục vụ.</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Viết một <code>HinhFactory</code> (tương tự <code>ThongBaoFactory</code>) tạo các loại <code>HinhHoc</code> từ Chương 18
+(<code>HinhTron</code>, <code>HinhChuNhat</code>) dựa trên tên loại truyền vào dạng chuỗi.</li>
+<li>Mở rộng <code>StrategyDemo.java</code> thêm một chiến lược <code>GiamGiaTheoBac</code> (giảm % khác nhau tuỳ khoảng
+giá trị đơn hàng — ví dụ dưới 100k không giảm, 100k-500k giảm 5%, trên 500k giảm 10%).</li>
+<li>Viết một <code>Observer</code> mới cho <code>ObserverDemo.java</code>: <code>LichSuGiaCoPhieu</code> ghi lại toàn bộ lịch sử các
+mức giá đã thông báo vào một <code>List&lt;Double&gt;</code>, có phương thức in ra toàn bộ lịch sử.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Dùng Singleton cho mọi class &quot;chỉ cần một object&quot; một cách máy móc</strong>, kể cả khi không thực sự
+cần chia sẻ trạng thái toàn cục — làm code khó kiểm thử hơn không cần thiết. Cân nhắc có thực sự
+cần <strong>đúng một</strong> instance duy nhất trong toàn bộ chương trình hay không.</li>
+<li><strong>Factory chỉ có một loại object duy nhất để tạo</strong> — không cần Factory, <code>new</code> trực tiếp là đủ.
+Factory chỉ thực sự có giá trị khi việc chọn loại cụ thể có logic đáng gom lại.</li>
+<li><strong>Strategy với chỉ một chiến lược duy nhất, không bao giờ đổi</strong> — thêm interface không cần thiết,
+chỉ nên áp dụng khi thực sự có nhiều cách xử lý cần hoán đổi.</li>
+<li><strong>Observer nhưng subject và observer phụ thuộc chặt vào nhau</strong> (observer cần biết quá nhiều chi
+tiết nội bộ của subject để xử lý đúng) — làm mất đi lợi ích tách rời (decoupling) chính là mục
+tiêu cốt lõi của pattern này.</li>
+<li><strong>Quên <code>huyDangKy</code> khi observer không còn cần theo dõi nữa</strong> — nếu subject sống lâu hơn observer
+(ví dụ observer là một phần giao diện đã bị đóng), observer &quot;chết&quot; nhưng vẫn còn trong danh sách
+đăng ký gây rò rỉ bộ nhớ (memory leak) — vấn đề thực tế phổ biến khi dùng Observer pattern.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch43-debug-logging.html">&larr; 43. Debug & logging</a><a class="nav-next" href="ch45-solid.html">45. Nguyên lý SOLID &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

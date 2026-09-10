@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 46 — Kết nối cơ sở dữ liệu: JDBC cơ bản — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link active" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 46 — Kết nối cơ sở dữ liệu: JDBC cơ bản</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Kết nối được tới cơ sở dữ liệu quan hệ từ Java bằng JDBC.</li>
+<li>Thực thi câu lệnh SQL (tạo bảng, thêm, truy vấn dữ liệu) và đọc kết quả bằng <code>ResultSet</code>.</li>
+<li>Hiểu lỗ hổng <strong>SQL injection</strong> là gì, và dùng <code>PreparedStatement</code> để phòng tránh — đây là kỹ
+năng <strong>bắt buộc phải nắm vững</strong> trước khi viết bất kỳ code tương tác database thực tế nào.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch46-jdbc/"><code>code/ch46-jdbc/</code></a>.</p>
+<h2>JDBC là gì?</h2>
+<p><strong>JDBC</strong> (Java Database Connectivity) là API chuẩn của Java để giao tiếp với cơ sở dữ liệu quan hệ
+(MySQL, PostgreSQL, Oracle, H2...). Mỗi loại cơ sở dữ liệu có một <strong>driver</strong> riêng (một thư viện
+<code>.jar</code> — nhắc lại khái niệm dependency ở Chương 35/42) cài đặt các interface chuẩn của JDBC, nên
+code Java của bạn viết theo <strong>cùng một API</strong> dù đang giao tiếp với loại cơ sở dữ liệu nào — chỉ cần
+đổi driver và connection URL, phần lớn code còn lại giữ nguyên.</p>
+<p>Chương này dùng <strong>H2</strong> — một cơ sở dữ liệu <strong>nhúng</strong> (embedded), chạy trực tiếp trong bộ nhớ của
+chương trình Java, không cần cài đặt/khởi động một server database riêng biệt như MySQL/PostgreSQL —
+lý tưởng để học và thử nghiệm nhanh mà không cần thiết lập môi trường phức tạp.</p>
+<h2>Kết nối cơ sở dữ liệu</h2>
+<pre class="hljs"><code><span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;jdbc:h2:mem:testdb&quot;</span>;
+<span class="hljs-keyword">try</span> (<span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> DriverManager.getConnection(url, <span class="hljs-string">&quot;sa&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><code>DriverManager.getConnection(url, user, password)</code> mở một kết nối. <code>Connection</code> là
+<code>AutoCloseable</code> (Chương 21) — luôn dùng <code>try-with-resources</code> để đảm bảo kết nối được đóng đúng
+cách, tránh rò rỉ tài nguyên (một vấn đề nghiêm trọng nếu chương trình mở nhiều kết nối mà không
+đóng, dần dần làm cạn kiệt tài nguyên hệ thống/database).</p>
+<h2>Thực thi SQL và đọc kết quả với <code>Statement</code></h2>
+<pre class="hljs"><code><span class="hljs-keyword">try</span> (<span class="hljs-type">Statement</span> <span class="hljs-variable">stmt</span> <span class="hljs-operator">=</span> conn.createStatement()) {
+    stmt.execute(<span class="hljs-string">&quot;CREATE TABLE sinh_vien (id INT PRIMARY KEY, ten VARCHAR(100), tuoi INT)&quot;</span>);
+    stmt.execute(<span class="hljs-string">&quot;INSERT INTO sinh_vien VALUES (1, &#x27;Nguyen Van A&#x27;, 20)&quot;</span>);
+
+    <span class="hljs-keyword">try</span> (<span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> stmt.executeQuery(<span class="hljs-string">&quot;SELECT id, ten, tuoi FROM sinh_vien&quot;</span>)) {
+        <span class="hljs-keyword">while</span> (rs.next()) {
+            <span class="hljs-type">int</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> rs.getInt(<span class="hljs-string">&quot;id&quot;</span>);
+            <span class="hljs-type">String</span> <span class="hljs-variable">ten</span> <span class="hljs-operator">=</span> rs.getString(<span class="hljs-string">&quot;ten&quot;</span>);
+            System.out.println(id + <span class="hljs-string">&quot; - &quot;</span> + ten);
+        }
+    }
+}
+</code></pre>
+<ul>
+<li><code>execute(...)</code> — chạy câu lệnh không cần lấy kết quả dạng bảng (tạo bảng, thêm/sửa/xoá dữ liệu).</li>
+<li><code>executeQuery(...)</code> — chạy câu <code>SELECT</code>, trả về <code>ResultSet</code> — đại diện cho <strong>kết quả dạng bảng</strong>.</li>
+<li><code>rs.next()</code> — di chuyển &quot;con trỏ&quot; tới <strong>dòng tiếp theo</strong> của kết quả, trả về <code>false</code> khi hết dữ
+liệu (mẫu quen thuộc, tương tự <code>readLine()</code> ở Chương 34). <code>rs.getInt(&quot;id&quot;)</code>/<code>rs.getString(&quot;ten&quot;)</code>
+đọc giá trị của <strong>cột</strong> tương ứng trong dòng hiện tại.</li>
+</ul>
+<h2>SQL injection — lỗ hổng nghiêm trọng cần tránh</h2>
+<pre class="hljs"><code><span class="hljs-comment">// SAI - RUI RO SQL INJECTION</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">tenNguoiDung</span> <span class="hljs-operator">=</span> layTuNguoiDungNhap(); <span class="hljs-comment">// vi du: &quot;admin&#x27; OR &#x27;1&#x27;=&#x27;1&quot;</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;SELECT * FROM nguoi_dung WHERE ten = &#x27;&quot;</span> + tenNguoiDung + <span class="hljs-string">&quot;&#x27;&quot;</span>;
+</code></pre>
+<p>Nếu <code>tenNguoiDung</code> là dữ liệu do <strong>người dùng nhập</strong> (không đáng tin cậy), và bạn <strong>nối chuỗi trực
+tiếp</strong> vào câu SQL, kẻ tấn công có thể nhập một giá trị được <strong>thiết kế đặc biệt</strong> để thay đổi hoàn
+toàn ý nghĩa câu lệnh SQL. Với ví dụ trên, nhập <code>admin' OR '1'='1</code> biến câu lệnh thành:</p>
+<pre class="hljs"><code><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> nguoi_dung <span class="hljs-keyword">WHERE</span> ten <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;admin&#x27;</span> <span class="hljs-keyword">OR</span> <span class="hljs-string">&#x27;1&#x27;</span><span class="hljs-operator">=</span><span class="hljs-string">&#x27;1&#x27;</span>
+</code></pre>
+<p><code>'1'='1'</code> <strong>luôn đúng</strong>, khiến điều kiện <code>WHERE</code> trở nên vô nghĩa — câu lệnh trả về <strong>toàn bộ</strong>
+bảng <code>nguoi_dung</code>, thay vì đúng một dòng như dự định (trong tình huống thực tế nghiêm trọng hơn,
+kỹ thuật này có thể dùng để bỏ qua xác thực đăng nhập, đọc trộm dữ liệu, hoặc thậm chí xoá/sửa dữ
+liệu tuỳ ý). Đây gọi là <strong>SQL injection</strong> — một trong những lỗ hổng bảo mật web/ứng dụng phổ biến
+và nguy hiểm nhất trong lịch sử lập trình.</p>
+<h2><code>PreparedStatement</code> — cách phòng tránh đúng cách</h2>
+<pre class="hljs"><code><span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;SELECT * FROM nguoi_dung WHERE ten = ?&quot;</span>;
+<span class="hljs-keyword">try</span> (<span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">pstmt</span> <span class="hljs-operator">=</span> conn.prepareStatement(sql)) {
+    pstmt.setString(<span class="hljs-number">1</span>, tenNguoiDung); <span class="hljs-comment">// gia tri duoc truyen RIENG, KHONG noi vao chuoi SQL</span>
+    <span class="hljs-keyword">try</span> (<span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> pstmt.executeQuery()) {
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<p>Dấu <code>?</code> là <strong>tham số giữ chỗ</strong> (placeholder) — giá trị thật được truyền <strong>riêng biệt</strong> qua
+<code>setString(vi_tri, gia_tri)</code> (tương tự <code>setInt</code>, <code>setDouble</code>... tuỳ kiểu dữ liệu), <strong>không bao giờ</strong>
+được database hiểu là một phần <strong>cấu trúc</strong> câu lệnh SQL, dù giá trị đó chứa ký tự đặc biệt gì đi
+nữa (<code>'</code>, <code>;</code>, <code>--</code>...). Database driver tự đảm bảo tách biệt hoàn toàn giữa &quot;cấu trúc câu lệnh&quot; và
+&quot;dữ liệu&quot;, loại bỏ hoàn toàn khả năng SQL injection theo cách trên.</p>
+<p><strong>Quy tắc bắt buộc, không có ngoại lệ</strong>: <strong>luôn</strong> dùng <code>PreparedStatement</code> với tham số <code>?</code> cho bất
+kỳ giá trị nào <strong>có nguồn gốc từ bên ngoài</strong> (người dùng nhập, dữ liệu từ file/API...) khi xây dựng
+câu lệnh SQL. Không bao giờ nối chuỗi trực tiếp giá trị không đáng tin cậy vào câu SQL, dù chỉ để
+&quot;viết nhanh cho tiện&quot; trong lúc học hay thử nghiệm — đây là thói quen cần hình thành <strong>ngay từ
+đầu</strong>, không để dành &quot;sửa sau&quot; trong dự án thực tế.</p>
+<p><code>PreparedStatement</code> còn xử lý đúng các ký tự đặc biệt trong dữ liệu (như dấu nháy đơn trong tên
+<code>&quot;O'Brien&quot;</code>, xem <code>PreparedStatementDemo.java</code>) mà không cần bạn tự &quot;escape&quot; thủ công — nối chuỗi
+thủ công với dữ liệu chứa dấu nháy đơn thường gây <strong>lỗi cú pháp SQL</strong>, ngoài rủi ro bảo mật.</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Mở rộng <code>JdbcBasicsDemo.java</code> thêm câu lệnh <code>UPDATE</code> (sửa tuổi một sinh viên) và <code>DELETE</code> (xoá
+một sinh viên), dùng <code>PreparedStatement</code> cho cả hai.</li>
+<li>Viết phương thức <code>List&lt;String&gt; timSinhVienTheoTen(Connection conn, String tuKhoa)</code> dùng
+<code>PreparedStatement</code> với <code>LIKE ?</code> (tìm kiếm gần đúng theo tên), truyền <code>&quot;%&quot; + tuKhoa + &quot;%&quot;</code> làm
+tham số.</li>
+<li>Thử tự chạy lại thí nghiệm SQL injection trong <code>PreparedStatementDemo.java</code> với vài giá trị đầu
+vào &quot;độc hại&quot; khác (tự nghĩ thêm), xác nhận <code>PreparedStatement</code> luôn trả về đúng kết quả mong
+đợi (0 hoặc đúng số bản ghi khớp thật sự).</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Nối chuỗi trực tiếp dữ liệu người dùng vào câu SQL</strong> — lỗ hổng SQL injection, lỗi nghiêm trọng
+nhất có thể mắc phải trong chương này. Luôn dùng <code>PreparedStatement</code>.</li>
+<li><strong>Quên đóng <code>Connection</code>/<code>Statement</code>/<code>ResultSet</code></strong> — rò rỉ tài nguyên, dần dần làm cạn kiệt số kết
+nối khả dụng của database. Luôn dùng <code>try-with-resources</code> (Chương 21).</li>
+<li><strong><code>SQLException: No suitable driver found</code></strong> — thiếu driver JDBC tương ứng trong classpath (quên
+<code>-cp</code> trỏ tới file <code>.jar</code> của H2, hoặc chưa khai báo dependency đúng trong Maven/Gradle).</li>
+<li><strong>Đánh chỉ số tham số <code>?</code> sai vị trí trong <code>PreparedStatement</code></strong> (<code>setString</code>/<code>setInt</code> với chỉ số
+sai) — chỉ số bắt đầu từ <strong>1</strong>, không phải <code>0</code> (khác với chỉ số mảng/<code>List</code> đã quen từ Chương 9,
+24) — gán sai vị trí dẫn tới lỗi hoặc dữ liệu bị gán nhầm cột.</li>
+<li><strong>Không đóng <code>ResultSet</code> trước khi chạy truy vấn khác trên cùng <code>Statement</code></strong> — một số driver
+database yêu cầu đóng <code>ResultSet</code> hiện tại trước khi tái sử dụng cùng <code>Statement</code> cho câu lệnh
+khác; dùng <code>try-with-resources</code> lồng nhau đúng cách (như trong code mẫu) tránh được vấn đề này.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch45-solid.html">&larr; 45. Nguyên lý SOLID</a><a class="nav-next" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

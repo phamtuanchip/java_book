@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 37 — Thread cơ bản — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link active" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 37 — Thread cơ bản</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Hiểu thread (luồng) là gì, vì sao cần lập trình đa luồng.</li>
+<li>Tạo thread bằng hai cách: <code>extends Thread</code> và <code>implements Runnable</code>, biết cách nào nên dùng hơn.</li>
+<li>Hiểu vòng đời của thread, dùng <code>start()</code>, <code>join()</code>, <code>sleep()</code> đúng cách.</li>
+<li>Hiểu thứ tự chạy giữa các thread độc lập <strong>không được đảm bảo</strong>, và vì sao điều đó quan trọng.</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch37-thread-co-ban/"><code>code/ch37-thread-co-ban/</code></a>.</p>
+<h2>Thread là gì?</h2>
+<p>Mọi chương trình từ đầu sách đến giờ chạy theo <strong>một luồng duy nhất</strong> (single-threaded) — các câu
+lệnh thực thi tuần tự, từng dòng một, chỉ có một &quot;việc&quot; diễn ra tại một thời điểm. <strong>Thread</strong>
+(luồng) là một &quot;đường chạy&quot; độc lập của chương trình — một chương trình có thể có <strong>nhiều thread
+chạy song song</strong> (đồng thời, hoặc xen kẽ rất nhanh nếu máy chỉ có một lõi CPU), mỗi thread thực
+hiện một công việc riêng, không phải đợi thread khác làm xong mới bắt đầu.</p>
+<p>Dùng đa luồng khi cần: xử lý nhiều việc <strong>độc lập</strong> cùng lúc (ví dụ vừa tải dữ liệu từ mạng, vừa
+giữ giao diện phản hồi được với người dùng), hoặc tận dụng <strong>nhiều lõi CPU</strong> để tính toán nhanh hơn
+bằng cách chia nhỏ công việc.</p>
+<h2>Cách 1: <code>extends Thread</code></h2>
+<pre class="hljs"><code><span class="hljs-keyword">class</span> <span class="hljs-title class_">DemSo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++) {
+            System.out.println(<span class="hljs-string">&quot;dem: &quot;</span> + i);
+        }
+    }
+}
+
+<span class="hljs-type">DemSo</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DemSo</span>();
+t.start(); <span class="hljs-comment">// KHONG goi t.run() truc tiep!</span>
+</code></pre>
+<p>Override <code>run()</code> — đây là nơi chứa code sẽ chạy <strong>trên thread mới</strong>. <strong>Điểm quan trọng nhất cần
+nhớ</strong>: gọi <code>t.start()</code> để <strong>thực sự bắt đầu chạy trên một thread mới</strong>; nếu bạn vô tình gọi
+<code>t.run()</code> trực tiếp (như gọi một phương thức bình thường), code vẫn chạy, nhưng chạy <strong>trên chính
+thread hiện tại</strong> (thường là <code>main</code>), <strong>không</strong> tạo thread mới nào cả — mất hoàn toàn ý nghĩa của
+việc dùng Thread.</p>
+<h2>Cách 2: <code>implements Runnable</code> — được khuyến dùng hơn</h2>
+<pre class="hljs"><code><span class="hljs-keyword">class</span> <span class="hljs-title class_">TacVu</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Runnable</span> {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Dang chay...&quot;</span>);
+    }
+}
+
+<span class="hljs-type">Thread</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">TacVu</span>());
+t.start();
+</code></pre>
+<p>Thay vì <code>extends Thread</code> trực tiếp, tạo một class <code>implements Runnable</code> (chỉ định nghĩa <strong>công
+việc cần làm</strong>), rồi truyền nó vào constructor của <code>Thread</code>. Lý do cách này được khuyến dùng hơn:
+nhắc lại Chương 16, Java <strong>không hỗ trợ đa kế thừa class</strong> — nếu class của bạn đã <code>extends Thread</code>,
+nó <strong>không còn &quot;chỗ trống&quot;</strong> để <code>extends</code> thêm bất kỳ class nào khác nếu sau này cần. Dùng
+<code>implements Runnable</code> giữ được sự linh hoạt đó, vì một class <code>implements</code> được nhiều interface
+(Chương 18).</p>
+<h3>Viết gọn hơn bằng lambda (Chương 30)</h3>
+<pre class="hljs"><code><span class="hljs-type">Thread</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(() -&gt; {
+    System.out.println(<span class="hljs-string">&quot;Dang chay...&quot;</span>);
+});
+</code></pre>
+<p><code>Runnable</code> chỉ có <strong>đúng một</strong> phương thức abstract (<code>run()</code>) — đây chính xác là một functional
+interface (Chương 30), nên dùng lambda thay cho việc tự viết hẳn một class riêng là cách viết phổ
+biến nhất trong code Java hiện đại.</p>
+<h2>Vòng đời của Thread</h2>
+<pre class="mermaid">graph LR
+    A[NEW&lt;br/&gt;vừa tạo, chưa start] --&gt;|start| B[RUNNABLE&lt;br/&gt;đang chạy hoặc sẵn sàng chạy]
+    B --&gt;|sleep/wait| C[TIMED_WAITING /&lt;br/&gt;WAITING]
+    C --&gt;|hết thời gian/được đánh thức| B
+    B --&gt;|run kết thúc| D[TERMINATED&lt;br/&gt;đã chạy xong]
+</pre>
+<p><code>Thread.getState()</code> cho biết trạng thái hiện tại. Vài trạng thái quan trọng:</p>
+<ul>
+<li><strong><code>NEW</code></strong> — object <code>Thread</code> đã tạo (<code>new Thread(...)</code>) nhưng <strong>chưa</strong> gọi <code>start()</code>.</li>
+<li><strong><code>RUNNABLE</code></strong> — đã <code>start()</code>, đang chạy hoặc sẵn sàng được CPU cấp thời gian chạy.</li>
+<li><strong><code>TIMED_WAITING</code></strong> — đang tạm dừng có thời hạn, ví dụ đang trong <code>Thread.sleep(...)</code>.</li>
+<li><strong><code>TERMINATED</code></strong> — <code>run()</code> đã chạy xong hoàn toàn (hoặc kết thúc do lỗi không bắt được).</li>
+</ul>
+<h2><code>join()</code> — chờ một thread khác chạy xong</h2>
+<pre class="hljs"><code>t1.start();
+t2.start();
+t1.join(); <span class="hljs-comment">// main DUNG LAI o day, cho t1 chay xong HOAN TOAN</span>
+t2.join(); <span class="hljs-comment">// roi cho t2 chay xong HOAN TOAN</span>
+System.out.println(<span class="hljs-string">&quot;Ca hai da xong&quot;</span>);
+</code></pre>
+<p>Nếu <strong>không</strong> gọi <code>join()</code>, thread gọi <code>start()</code> (thường là <code>main</code>) tiếp tục chạy ngay lập tức,
+<strong>không đợi</strong> thread mới tạo chạy xong — chương trình có thể kết thúc (hoặc <code>main</code> chạy tới dòng in
+kết quả) <strong>trước khi</strong> thread mới kịp làm xong việc. <code>join()</code> chặn thread hiện tại lại cho tới khi
+thread được gọi <code>join()</code> chuyển sang <code>TERMINATED</code>.</p>
+<h2><code>Thread.sleep(...)</code> — tạm dừng có thời hạn</h2>
+<pre class="hljs"><code>Thread.sleep(<span class="hljs-number">1000</span>); <span class="hljs-comment">// tam dung thread NAY 1000 mili-giay (1 giay)</span>
+</code></pre>
+<p><code>sleep</code> chỉ tạm dừng <strong>thread đang gọi nó</strong> — các thread khác (kể cả <code>main</code>, nếu gọi <code>sleep</code> từ một
+thread con) không bị ảnh hưởng, vẫn chạy bình thường. <code>sleep</code> ném <code>InterruptedException</code> (checked
+exception, Chương 21) nếu thread bị &quot;đánh thức sớm&quot; một cách chủ động từ bên ngoài — cần
+<code>try/catch</code> khi gọi.</p>
+<h2>Thứ tự chạy giữa các thread KHÔNG được đảm bảo</h2>
+<pre class="hljs"><code><span class="hljs-type">Thread</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(() -&gt; System.out.println(<span class="hljs-string">&quot;A&quot;</span>));
+<span class="hljs-type">Thread</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(() -&gt; System.out.println(<span class="hljs-string">&quot;B&quot;</span>));
+a.start();
+b.start();
+</code></pre>
+<p>Đây là điều <strong>quan trọng nhất</strong> cần khắc sâu ở chương này: sau khi cả hai thread <code>start()</code>, <strong>không
+có gì đảm bảo</strong> <code>a</code> sẽ in &quot;A&quot; trước khi <code>b</code> in &quot;B&quot; — hệ điều hành quyết định thứ tự cấp thời gian
+chạy cho từng thread, có thể khác nhau <strong>mỗi lần chạy chương trình</strong>, thậm chí trên cùng một máy.
+Chạy <code>ThreadLifecycleDemo.java</code> vài lần để tự quan sát thứ tự &quot;A&quot;/&quot;B&quot; thay đổi giữa các lần chạy.
+Đây chính là nguồn gốc của nhiều lỗi đa luồng tinh vi — Chương 38 sẽ học cách xử lý khi nhiều thread
+cùng truy cập chung một dữ liệu, nơi thứ tự không đảm bảo này thực sự gây ra sai lệch dữ liệu.</p>
+<h2>Bài tập</h2>
+<ol>
+<li>Tạo 5 thread (dùng <code>Runnable</code> + lambda), mỗi thread in ra số thứ tự của nó (<code>0</code> đến <code>4</code>), chạy
+chương trình nhiều lần và quan sát thứ tự in ra không cố định.</li>
+<li>Viết chương trình dùng <code>Thread.sleep</code> để mô phỏng &quot;tải dữ liệu&quot; mất 2 giây trên một thread riêng,
+trong khi <code>main</code> in ra &quot;Đang xử lý...&quot; mỗi 500ms cho tới khi thread tải xong (gợi ý: dùng vòng
+lặp kiểm tra <code>thread.isAlive()</code>).</li>
+<li>So sánh thời gian chạy: tính tổng bình phương các số từ 1 đến 10.000.000 bằng (a) một vòng lặp
+đơn giản, (b) chia thành 2 thread mỗi thread xử lý một nửa dãy số rồi cộng kết quả lại (dùng
+<code>join()</code> để chờ cả hai xong). Trên máy nhiều lõi, cách (b) có thể nhanh hơn.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Gọi <code>t.run()</code> thay vì <code>t.start()</code></strong> — chạy trên thread hiện tại, không tạo thread mới, mất hoàn
+toàn ý nghĩa đa luồng. Đây là lỗi rất phổ biến với người mới, vì cả hai đều biên dịch được bình
+thường, không có cảnh báo.</li>
+<li><strong>Quên <code>join()</code>, chương trình kết thúc trước khi thread con làm xong việc</strong> — với chương trình
+console đơn giản, <code>main</code> kết thúc kéo theo toàn bộ tiến trình JVM kết thúc, thread con có thể bị
+&quot;cắt ngang&quot; nếu chưa kịp chạy xong (thread không phải &quot;daemon&quot; mặc định thì JVM sẽ đợi, nhưng để
+chắc chắn về thứ tự hoàn thành, luôn dùng <code>join()</code> tường minh nếu cần).</li>
+<li><strong>Gọi <code>start()</code> hai lần trên cùng một object <code>Thread</code></strong> — ném <code>IllegalThreadStateException</code>. Mỗi
+object <code>Thread</code> chỉ chạy được <strong>đúng một lần</strong>; cần tạo object <code>Thread</code> mới nếu muốn chạy lại.</li>
+<li><strong>Giả định thứ tự chạy giữa các thread độc lập</strong> (viết logic phụ thuộc vào việc &quot;thread A luôn in
+trước thread B&quot;) — không đảm bảo, có thể chạy đúng &quot;tình cờ&quot; trên máy bạn nhưng sai trên máy khác
+hoặc lần chạy khác. Nếu cần đảm bảo thứ tự, phải dùng cơ chế đồng bộ hoá (Chương 38) hoặc <code>join()</code>
+đúng chỗ.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch36-serialization.html">&larr; 36. Serialization cơ bản</a><a class="nav-next" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 31 — Stream API — Java từ Cơ bản đến Nâng cao — Tập 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar"><div class="sidebar-title">Java từ Cơ bản đến Nâng cao — Tập 1</div><ul class="part-list"><li class="part"><div class="part-title">Phần 0 — Chuẩn bị môi trường</div><ul class="chapter-list"><li><a class="chapter-link" href="ch01-gioi-thieu-java.html">1. Giới thiệu Java: JDK/JRE/JVM là gì</a></li><li><a class="chapter-link" href="ch02-cai-dat-moi-truong.html">2. Cài đặt JDK và IDE</a></li><li><a class="chapter-link" href="ch03-chuong-trinh-dau-tien.html">3. Chương trình Java đầu tiên</a></li><li><a class="chapter-link" href="ch04-lam-quen-ide.html">4. Làm quen IDE và giới thiệu Maven/Gradle</a></li></ul></li><li class="part"><div class="part-title">Phần 1 — Nền tảng lập trình</div><ul class="chapter-list"><li><a class="chapter-link" href="ch05-bien-kieu-du-lieu.html">5. Biến, kiểu dữ liệu nguyên thủy, ép kiểu</a></li><li><a class="chapter-link" href="ch06-toan-tu-bieu-thuc.html">6. Toán tử và biểu thức</a></li><li><a class="chapter-link" href="ch07-cau-truc-dieu-khien.html">7. Cấu trúc điều khiển: if/else, switch</a></li><li><a class="chapter-link" href="ch08-vong-lap.html">8. Vòng lặp: for, while, do-while</a></li><li><a class="chapter-link" href="ch09-mang.html">9. Mảng một chiều và nhiều chiều</a></li><li><a class="chapter-link" href="ch10-phuong-thuc.html">10. Phương thức (method) tĩnh</a></li><li><a class="chapter-link" href="ch11-chuoi-string.html">11. Chuỗi (String) và StringBuilder</a></li></ul></li><li class="part"><div class="part-title">Phần 2 — Nhập môn OOP</div><ul class="chapter-list"><li><a class="chapter-link" href="ch12-vi-sao-can-oop.html">12. Vì sao cần OOP</a></li><li><a class="chapter-link" href="ch13-class-va-object.html">13. Class & Object</a></li><li><a class="chapter-link" href="ch14-encapsulation.html">14. Encapsulation (đóng gói)</a></li><li><a class="chapter-link" href="ch15-package-va-import.html">15. Package & import</a></li></ul></li><li class="part"><div class="part-title">Phần 3 — OOP nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch16-ke-thua.html">16. Kế thừa (Inheritance)</a></li><li><a class="chapter-link" href="ch17-da-hinh.html">17. Đa hình (Polymorphism)</a></li><li><a class="chapter-link" href="ch18-abstract-va-interface.html">18. Abstract class & Interface</a></li><li><a class="chapter-link" href="ch19-nested-class-enum.html">19. Lớp lồng, anonymous class, enum nâng cao</a></li><li><a class="chapter-link" href="ch20-object-class.html">20. Lớp Object: equals/hashCode/toString</a></li></ul></li><li class="part"><div class="part-title">Phần 4 — Xử lý lỗi & Generics</div><ul class="chapter-list"><li><a class="chapter-link" href="ch21-exception-handling.html">21. Exception handling</a></li><li><a class="chapter-link" href="ch22-generics.html">22. Generics</a></li></ul></li><li class="part"><div class="part-title">Phần 5 — Collection Framework & Cấu trúc dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch23-tong-quan-collection.html">23. Tổng quan Collection Framework</a></li><li><a class="chapter-link" href="ch24-arraylist-linkedlist.html">24. ArrayList & LinkedList</a></li><li><a class="chapter-link" href="ch25-set.html">25. HashSet, TreeSet, LinkedHashSet</a></li><li><a class="chapter-link" href="ch26-map.html">26. HashMap, TreeMap, LinkedHashMap</a></li><li><a class="chapter-link" href="ch27-duyet-sap-xep.html">27. Duyệt & sắp xếp: Iterator, Comparator</a></li><li><a class="chapter-link" href="ch28-thuat-toan-tim-kiem.html">28. Thuật toán tìm kiếm: Linear, Binary, Jump, Interpolation Search</a></li><li><a class="chapter-link" href="ch29-thuat-toan-duyet-do-thi.html">29. Duyệt đồ thị/cây: BFS & DFS</a></li></ul></li><li class="part"><div class="part-title">Phần 6 — Lập trình hàm & Java hiện đại</div><ul class="chapter-list"><li><a class="chapter-link" href="ch30-lambda.html">30. Lambda expression & functional interface</a></li><li><a class="chapter-link active" href="ch31-stream-api.html">31. Stream API</a></li><li><a class="chapter-link" href="ch32-optional.html">32. Optional và xử lý null an toàn</a></li><li><a class="chapter-link" href="ch33-java-hien-dai.html">33. Java hiện đại: var, record, sealed, pattern matching</a></li></ul></li><li class="part"><div class="part-title">Phần 7 — Nhập/Xuất & Xử lý dữ liệu</div><ul class="chapter-list"><li><a class="chapter-link" href="ch34-file-io.html">34. File I/O: java.io và java.nio.file</a></li><li><a class="chapter-link" href="ch35-json-csv.html">35. Xử lý JSON/CSV</a></li><li><a class="chapter-link" href="ch36-serialization.html">36. Serialization cơ bản</a></li></ul></li><li class="part"><div class="part-title">Phần 8 — Đa luồng & bất đồng bộ</div><ul class="chapter-list"><li><a class="chapter-link" href="ch37-thread-co-ban.html">37. Thread cơ bản</a></li><li><a class="chapter-link" href="ch38-dong-bo-hoa.html">38. Đồng bộ hoá: synchronized, Lock</a></li><li><a class="chapter-link" href="ch39-executor-completablefuture.html">39. ExecutorService & CompletableFuture</a></li><li><a class="chapter-link" href="ch40-virtual-thread.html">40. Giới thiệu Virtual Thread</a></li></ul></li><li class="part"><div class="part-title">Phần 9 — Công cụ, kiểm thử & quản lý dự án</div><ul class="chapter-list"><li><a class="chapter-link" href="ch41-junit.html">41. Unit test với JUnit 5</a></li><li><a class="chapter-link" href="ch42-maven-gradle.html">42. Build tool: Maven và Gradle</a></li><li><a class="chapter-link" href="ch43-debug-logging.html">43. Debug & logging</a></li></ul></li><li class="part"><div class="part-title">Phần 10 — Kiến trúc & thực hành nâng cao</div><ul class="chapter-list"><li><a class="chapter-link" href="ch44-design-pattern.html">44. Design pattern cơ bản</a></li><li><a class="chapter-link" href="ch45-solid.html">45. Nguyên lý SOLID</a></li><li><a class="chapter-link" href="ch46-jdbc.html">46. Kết nối cơ sở dữ liệu: JDBC cơ bản</a></li><li><a class="chapter-link" href="ch47-du-an-tong-hop.html">47. Dự án tổng hợp</a></li></ul></li><li class="part"><div class="part-title">Phụ lục</div><ul class="chapter-list"><li><a class="chapter-link" href="ch48-phu-luc-a-loi-thuong-gap.html">48. Phụ lục A — Lỗi thường gặp & cách xử lý</a></li><li><a class="chapter-link" href="ch49-phu-luc-b-tai-lieu-tham-khao.html">49. Phụ lục B — Tài liệu tham khảo</a></li></ul></li></ul></nav>
+<main class="content">
+<article>
+<h1>Chương 31 — Stream API</h1>
+<h2>Mục tiêu học</h2>
+<p>Sau chương này, bạn sẽ:</p>
+<ul>
+<li>Hiểu Stream là gì, khác gì so với <code>Collection</code> (Chương 23).</li>
+<li>Dùng thành thạo các thao tác trung gian phổ biến: <code>filter</code>, <code>map</code>, <code>sorted</code>.</li>
+<li>Dùng các thao tác kết thúc: <code>collect</code>, <code>count</code>, <code>anyMatch</code>/<code>allMatch</code>, <code>findFirst</code>, <code>reduce</code>.</li>
+<li>Dùng <code>Collectors</code> để gom kết quả thành <code>List</code>, <code>Map</code>, hoặc nhóm theo tiêu chí (<code>groupingBy</code>).</li>
+</ul>
+<p>Code mẫu đầy đủ: <a href="code/ch31-stream-api/"><code>code/ch31-stream-api/</code></a>.</p>
+<h2>Stream là gì?</h2>
+<pre class="hljs"><code><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">tenDaiCu</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+<span class="hljs-keyword">for</span> (String t : ten) {
+    <span class="hljs-keyword">if</span> (t.length() &gt; <span class="hljs-number">5</span>) {
+        tenDaiCu.add(t.toUpperCase());
+    }
+}
+</code></pre>
+<p>Đây là mẫu code rất quen thuộc: lọc phần tử theo điều kiện, biến đổi từng phần tử, gom kết quả lại.
+<strong>Stream</strong> (Java 8+) cung cấp một cách viết <strong>khai báo (declarative)</strong> cho đúng loại thao tác này —
+mô tả <strong>&quot;muốn gì&quot;</strong> thay vì viết từng bước <strong>&quot;làm thế nào&quot;</strong>:</p>
+<pre class="hljs"><code><span class="hljs-type">List</span>&lt;String&gt; <span class="hljs-variable">tenDaiMoi</span> <span class="hljs-operator">=</span> ten.stream()
+    .filter(t -&gt; t.length() &gt; <span class="hljs-number">5</span>)
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());
+</code></pre>
+<p>Đọc gần như tiếng Anh: &quot;lấy stream từ <code>ten</code>, lọc giữ lại phần tử dài hơn 5, biến đổi thành chữ hoa,
+gom lại thành một <code>List</code>&quot;. <strong>Stream không phải là một cấu trúc dữ liệu</strong> (khác <code>List</code>/<code>Set</code>/<code>Map</code>
+đã học ở Phần 5) — nó là một &quot;đường ống xử lý&quot; tạm thời, chạy qua dữ liệu từ một nguồn (thường là
+một <code>Collection</code> có sẵn) rồi biến mất, <strong>không lưu trữ gì lâu dài</strong> và <strong>không sửa đổi</strong> nguồn dữ
+liệu gốc.</p>
+<h2>Ba phần của một pipeline Stream</h2>
+<pre class="mermaid">graph LR
+    A[&quot;Nguồn dữ liệu&lt;br/&gt;(list.stream())&quot;] --&gt; B[&quot;Thao tác trung gian&lt;br/&gt;(filter, map, sorted...)&quot;]
+    B --&gt; C[&quot;Thao tác kết thúc&lt;br/&gt;(collect, count, forEach...)&quot;]
+</pre>
+<ol>
+<li><strong>Nguồn</strong> — thường gọi <code>.stream()</code> trên một <code>Collection</code> có sẵn.</li>
+<li><strong>Thao tác trung gian (intermediate)</strong> — trả về <strong>một Stream khác</strong>, có thể <strong>nối tiếp</strong> nhiều
+thao tác liên tục (gọi là &quot;chaining&quot;). Không thực sự chạy ngay — Stream có tính chất <strong>lazy</strong>
+(lười biếng): các thao tác trung gian chỉ thực sự thực thi khi có một thao tác kết thúc được gọi.</li>
+<li><strong>Thao tác kết thúc (terminal)</strong> — trả về <strong>một kết quả cụ thể</strong> (không còn là Stream nữa), và
+<strong>kích hoạt</strong> toàn bộ pipeline chạy. Sau khi gọi một thao tác kết thúc, Stream đó <strong>không dùng
+lại được nữa</strong> (gọi thêm thao tác trên cùng Stream đó sẽ ném lỗi).</li>
+</ol>
+<h2>Thao tác trung gian phổ biến</h2>
+<pre class="hljs"><code>.filter(t -&gt; t.length() &gt; <span class="hljs-number">5</span>)     <span class="hljs-comment">// giu lai phan tu THOA DIEU KIEN (Predicate, Chuong 30)</span>
+.map(String::toUpperCase)         <span class="hljs-comment">// BIEN DOI tung phan tu thanh gia tri khac (Function, Chuong 30)</span>
+.sorted()                         <span class="hljs-comment">// sap xep theo thu tu tu nhien (hoac truyen Comparator)</span>
+</code></pre>
+<p><code>filter</code> nhận một <code>Predicate&lt;T&gt;</code>, <code>map</code> nhận một <code>Function&lt;T, R&gt;</code> — đây chính xác là các
+functional interface đã học ở Chương 30, được dùng làm &quot;tham số cấu hình&quot; cho từng bước xử lý của
+Stream.</p>
+<h2>Thao tác kết thúc phổ biến</h2>
+<pre class="hljs"><code>.collect(Collectors.toList())      <span class="hljs-comment">// gom thanh List</span>
+.count()                            <span class="hljs-comment">// dem so luong phan tu con lai sau cac buoc loc</span>
+.anyMatch(t -&gt; t.startsWith(<span class="hljs-string">&quot;A&quot;</span>))   <span class="hljs-comment">// co IT NHAT MOT phan tu thoa dieu kien khong?</span>
+.allMatch(t -&gt; t.length() &gt; <span class="hljs-number">2</span>)      <span class="hljs-comment">// TAT CA phan tu deu thoa dieu kien khong?</span>
+.findFirst()                        <span class="hljs-comment">// lay phan tu DAU TIEN con lai, tra ve Optional (Chuong 32)</span>
+</code></pre>
+<h2><code>reduce()</code> — gộp toàn bộ Stream thành một giá trị</h2>
+<pre class="hljs"><code><span class="hljs-type">double</span> <span class="hljs-variable">tongGiaTri</span> <span class="hljs-operator">=</span> danhSach.stream()
+    .map(SanPham::getGia)
+    .reduce(<span class="hljs-number">0.0</span>, Double::sum);
+</code></pre>
+<p><code>reduce(giaTriKhoiDau, hamGop)</code> áp dụng <code>hamGop</code> liên tiếp lên <strong>giá trị đang tích luỹ</strong> và <strong>từng
+phần tử tiếp theo</strong>, bắt đầu từ <code>giaTriKhoiDau</code>. Về bản chất, <code>reduce</code> <strong>tương đương</strong> một vòng lặp
+tích luỹ bạn đã viết tay nhiều lần trong sách này:</p>
+<pre class="hljs"><code><span class="hljs-type">double</span> <span class="hljs-variable">tong</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.0</span>;
+<span class="hljs-keyword">for</span> (SanPham sp : danhSach) {
+    tong = Double.sum(tong, sp.getGia()); <span class="hljs-comment">// tuong duong tong = tong + sp.getGia()</span>
+}
+</code></pre>
+<h2><code>Collectors</code> — các cách gom kết quả phổ biến</h2>
+<pre class="hljs"><code>Collectors.toList()                              <span class="hljs-comment">// gom thanh List</span>
+Collectors.toMap(SanPham::getTen, SanPham::getGia) <span class="hljs-comment">// gom thanh Map (key -&gt; value)</span>
+Collectors.groupingBy(SanPham::getLoai)           <span class="hljs-comment">// nhom thanh Map&lt;Loai, List&lt;SanPham&gt;&gt;</span>
+Collectors.groupingBy(SanPham::getLoai, Collectors.summingDouble(SanPham::getGia)) <span class="hljs-comment">// nhom + tinh tong tung nhom</span>
+Collectors.joining(<span class="hljs-string">&quot;, &quot;</span>)                          <span class="hljs-comment">// noi cac String lai, cach nhau boi dau phan cach</span>
+</code></pre>
+<p><code>groupingBy</code> đặc biệt hữu ích: chỉ với một dòng, thay thế hoàn toàn khối code thủ công (tạo <code>Map</code>,
+kiểm tra key tồn tại, khởi tạo <code>List</code> mới cho key lần đầu, thêm phần tử...) mà bạn từng phải tự viết
+ở bài tập Chương 26.</p>
+<h2>Khi nào nên dùng Stream, khi nào nên dùng vòng lặp thường?</h2>
+<p>Stream <strong>không thay thế hoàn toàn</strong> vòng lặp <code>for</code>/<code>for-each</code> — cả hai đều là công cụ hợp lệ:</p>
+<ul>
+<li><strong>Ưu tiên Stream</strong> khi thao tác là &quot;lọc - biến đổi - gom kết quả&quot; theo kiểu tuyến tính, không có
+logic điều khiển phức tạp (không cần <code>break</code> giữa chừng, không có nhiều nhánh rẽ phụ thuộc lẫn
+nhau) — Stream thường đọc rõ ràng và ngắn gọn hơn nhiều trong các trường hợp này.</li>
+<li><strong>Ưu tiên vòng lặp thường</strong> khi logic phức tạp, cần <code>break</code>/<code>continue</code> có điều kiện phức tạp, cần
+cập nhật nhiều biến cùng lúc theo cách không tự nhiên với mô hình &quot;biến đổi tuần tự&quot; — cố ép logic
+phức tạp vào Stream nhiều khi làm code <strong>khó đọc hơn</strong>, phản tác dụng.</li>
+</ul>
+<h2>Bài tập</h2>
+<ol>
+<li>Dùng Stream tính tổng bình phương của các số chẵn trong một <code>List&lt;Integer&gt;</code>
+(<code>filter</code> → <code>map</code> → <code>reduce</code>, hoặc dùng <code>mapToInt(...).sum()</code>).</li>
+<li>Dùng <code>Collectors.groupingBy</code> nhóm một <code>List&lt;NguoiDung&gt;</code> (tương tự Chương 27) theo độ tuổi chẵn
+hay lẻ (key là <code>&quot;chan&quot;</code>/<code>&quot;le&quot;</code>, tự viết một <code>Function</code> trả về chuỗi đó dựa trên <code>getTuoi() % 2</code>).</li>
+<li>Viết lại bài toán &quot;đếm số lần xuất hiện&quot; đã làm ở Chương 26 (dùng <code>Map</code>/<code>merge</code>) bằng Stream, sử
+dụng <code>Collectors.groupingBy(tu -&gt; tu, Collectors.counting())</code>.</li>
+</ol>
+<h2>Lỗi thường gặp</h2>
+<ul>
+<li><strong>Dùng lại một Stream đã gọi thao tác kết thúc</strong> — ném <code>IllegalStateException</code>
+(<code>stream has already been operated upon or closed</code>). Mỗi Stream chỉ dùng được <strong>một lần</strong>; cần
+gọi lại <code>.stream()</code> từ nguồn nếu muốn xử lý lại.</li>
+<li><strong>Tưởng <code>filter</code>/<code>map</code> sửa danh sách gốc</strong> — Stream <strong>không bao giờ</strong> sửa nguồn dữ liệu ban đầu,
+luôn tạo ra kết quả <strong>mới</strong> qua thao tác kết thúc (<code>collect</code>). Danh sách gốc (<code>ten</code> trong ví dụ
+trên) luôn giữ nguyên.</li>
+<li><strong>Viết pipeline Stream quá dài, quá nhiều bước lồng nhau, khó đọc hơn cả vòng lặp thường</strong> — nếu
+một pipeline Stream cần đọc đi đọc lại nhiều lần mới hiểu, đó là dấu hiệu nên tách thành các bước
+nhỏ hơn (gán kết quả trung gian cho biến có tên rõ ràng), hoặc quay lại dùng vòng lặp thường nếu
+hợp lý hơn.</li>
+<li><strong>Gọi thao tác kết thúc mà quên gán/dùng kết quả trả về</strong> — ví dụ chỉ viết
+<code>danhSach.stream().filter(...)</code> một mình (thiếu thao tác kết thúc) — do tính chất &quot;lazy&quot;, dòng
+này <strong>không làm gì cả</strong>, không có lỗi biên dịch/runtime, chỉ đơn giản là vô nghĩa. Luôn kết thúc
+pipeline bằng một thao tác kết thúc và dùng kết quả của nó.</li>
+</ul>
+
+</article>
+<div class="chapter-nav"><a class="nav-prev" href="ch30-lambda.html">&larr; 30. Lambda expression & functional interface</a><a class="nav-next" href="ch32-optional.html">32. Optional và xử lý null an toàn &rarr;</a></div>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script>if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral' }); }</script>
+</body>
+</html>
