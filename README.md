@@ -1,4 +1,5 @@
 # Java Book — Tập 1: Cơ bản đến Nâng cao
+**Đọc online (GitHub Pages): https://phamtuanchip.github.io/java_book/**
 
 Sách lập trình Java bằng tiếng Việt, dành cho người **chưa biết gì về lập trình lẫn OOP**,
 đi từ cài đặt JDK/JVM, cú pháp cơ bản, dạy hướng đối tượng (OOP) từ số 0 một cách chi tiết,
